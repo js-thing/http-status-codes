@@ -1,0 +1,34 @@
+{
+  "name": "http-status-codes",
+  "version": "1.0.0",
+  "description": "Http status codes constants",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json --config tslint.json",
+    "lint:fix": "tslint --project tsconfig.json --config tslint.json --fix",
+    "doc": "typedoc",
+    "clean": "rm -rf lib",
+    "build": "npm run lint && npm run clean && tsc && npm run doc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jnyan Ankur Kakati",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/js-thing/http-status-codes.git"
+  },
+  "devDependencies": {
+    "husky": "^6.0.0",
+    "tslint": "^6.1.3",
+    "tslint-config-airbnb": "^5.11.2",
+    "typedoc": "^0.20.36",
+    "typescript": "^4.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:fix",
+      "pre-push": "npm run build"
+    }
+  }
+}
