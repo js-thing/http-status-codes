@@ -1,0 +1,309 @@
+
+
+  HttpClientErrorStatus
+    #BadRequest
+      √ status code should be equal to 400
+    #UnAuthorised
+      √ status code should be equal to 401
+    #PaymentRequired
+      √ status code should be equal to 402
+    #Forbidden
+      √ status code should be equal to 403
+    #NotFound
+      √ status code should be equal to 404
+    #MethodNotAllowed
+      √ status code should be equal to 405
+    #NotAcceptable
+      √ status code should be equal to 406
+    #ProxyAuthenticationRequired
+      √ status code should be equal to 407
+    #RequestTimeout
+      √ status code should be equal to 408
+    #Conflict
+      √ status code should be equal to 409
+    #Gone
+      √ status code should be equal to 410
+    #LengthRequired
+      √ status code should be equal to 411
+    #PreconditionFailed
+      √ status code should be equal to 412
+    #PayloadTooLarge
+      √ status code should be equal to 413
+    #URITooLong
+      √ status code should be equal to 414
+    #UnsupportedMediaType
+      √ status code should be equal to 415
+    #RangeNotSatisfiable
+      √ status code should be equal to 416
+    #ExpectationFailed
+      √ status code should be equal to 417
+    #IAmATeapot
+      √ status code should be equal to 418
+    #MisdirectedRequest
+      √ status code should be equal to 421
+    #UnprocessableEntity
+      √ status code should be equal to 422
+    #Locked
+      √ status code should be equal to 423
+    #FailedDependency
+      √ status code should be equal to 424
+    #TooEarly
+      √ status code should be equal to 425
+    #UpgradeRequired
+      √ status code should be equal to 426
+    #PreconditionRequired
+      √ status code should be equal to 428
+    #TooManyRequests
+      √ status code should be equal to 429
+    #RequestHeaderFieldsTooLarge
+      √ status code should be equal to 431
+    #UnavailableForLegalReasons
+      √ status code should be equal to 451
+
+  HttpInformationStatus
+    #Continue
+      √ status code should be equal to 100
+    #SwitchingProtocol
+      √ status code should be equal to 101
+    #Processing
+      √ status code should be equal to 102
+    #EarlyHints
+      √ status code should be equal to 103
+
+  HttpRedirectionStatus
+    #MultipleChoice
+      √ status code should be equal to 300
+    #MovedPermanently
+      √ status code should be equal to 301
+    #Found
+      √ status code should be equal to 302
+    #SeeOther
+      √ status code should be equal to 303
+    #NotModified
+      √ status code should be equal to 304
+    #UseProxy
+      √ status code should be equal to 305
+    #TemporaryRedirect
+      √ status code should be equal to 307
+    #PermanentRedirect
+      √ status code should be equal to 308
+
+  HttpServerErrorStatus
+    #InternalServerError
+      √ status code should be equal to 500
+    #NotImplemented
+      √ status code should be equal to 501
+    #BadGateway
+      √ status code should be equal to 502
+    #ServiceUnavailable
+      √ status code should be equal to 503
+    #GatewayTimeout
+      √ status code should be equal to 504
+    #HTTPVersionNotSupported
+      √ status code should be equal to 505
+    #VariantAlsoNegotiates
+      √ status code should be equal to 506
+    #InsufficientStorage
+      √ status code should be equal to 507
+    #LoopDetected
+      √ status code should be equal to 508
+    #NotExtended
+      √ status code should be equal to 510
+    #NetworkAuthenticationRequired
+      √ status code should be equal to 511
+
+  HttpSuccessStatus
+    #Ok
+      √ status code should be equal to 200
+    #Created
+      √ status code should be equal to 201
+    #Accepted
+      √ status code should be equal to 202
+    #NonAuthoritativeInformation
+      √ status code should be equal to 203
+    #NoContent
+      √ status code should be equal to 204
+    #ResetContent
+      √ status code should be equal to 205
+    #PartialContent
+      √ status code should be equal to 206
+    #MultiStatus
+      √ status code should be equal to 207
+    #AlreadyReported
+      √ status code should be equal to 208
+    #IMUsed
+      √ status code should be equal to 226
+
+
+  62 passing (33ms)
+
+---------------------------|---------|----------|---------|---------|-------------------
+File                       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------------|---------|----------|---------|---------|-------------------
+All files                  |   98.63 |      100 |     100 |   98.63 |                   
+ src                       |       0 |        0 |       0 |       0 |                   
+  index.ts                 |       0 |        0 |       0 |       0 |                   
+ src/httpStatus            |   98.63 |      100 |     100 |   98.63 |                   
+  HttpClientErrorStatus.ts |     100 |      100 |     100 |     100 |                   
+  HttpInformationStatus.ts |     100 |      100 |     100 |     100 |                   
+  HttpRedirectionStatus.ts |     100 |      100 |     100 |     100 |                   
+  HttpServerErrorStatus.ts |     100 |      100 |     100 |     100 |                   
+  HttpSuccessStatus.ts     |     100 |      100 |     100 |     100 |                   
+  index.ts                 |       0 |      100 |     100 |       0 | 8                 
+---------------------------|---------|----------|---------|---------|-------------------
+TN:
+SF:src\index.ts
+FNF:0
+FNH:0
+LF:0
+LH:0
+BRF:0
+BRH:0
+end_of_record
+TN:
+SF:src\httpStatus\HttpClientErrorStatus.ts
+FN:1,(anonymous_0)
+FNF:1
+FNH:1
+FNDA:1,(anonymous_0)
+DA:1,1
+DA:2,1
+DA:3,1
+DA:4,1
+DA:5,1
+DA:6,1
+DA:7,1
+DA:8,1
+DA:9,1
+DA:10,1
+DA:11,1
+DA:12,1
+DA:13,1
+DA:14,1
+DA:15,1
+DA:16,1
+DA:17,1
+DA:18,1
+DA:19,1
+DA:20,1
+DA:21,1
+DA:22,1
+DA:23,1
+DA:24,1
+DA:25,1
+DA:26,1
+DA:27,1
+DA:28,1
+DA:29,1
+DA:30,1
+DA:33,1
+LF:31
+LH:31
+BRDA:1,0,0,1
+BRDA:1,0,1,1
+BRF:2
+BRH:2
+end_of_record
+TN:
+SF:src\httpStatus\HttpInformationStatus.ts
+FN:1,(anonymous_0)
+FNF:1
+FNH:1
+FNDA:1,(anonymous_0)
+DA:1,1
+DA:2,1
+DA:3,1
+DA:4,1
+DA:5,1
+DA:8,1
+LF:6
+LH:6
+BRDA:1,0,0,1
+BRDA:1,0,1,1
+BRF:2
+BRH:2
+end_of_record
+TN:
+SF:src\httpStatus\HttpRedirectionStatus.ts
+FN:1,(anonymous_0)
+FNF:1
+FNH:1
+FNDA:1,(anonymous_0)
+DA:1,1
+DA:2,1
+DA:3,1
+DA:4,1
+DA:5,1
+DA:6,1
+DA:7,1
+DA:8,1
+DA:9,1
+DA:12,1
+LF:10
+LH:10
+BRDA:1,0,0,1
+BRDA:1,0,1,1
+BRF:2
+BRH:2
+end_of_record
+TN:
+SF:src\httpStatus\HttpServerErrorStatus.ts
+FN:1,(anonymous_0)
+FNF:1
+FNH:1
+FNDA:1,(anonymous_0)
+DA:1,1
+DA:2,1
+DA:3,1
+DA:4,1
+DA:5,1
+DA:6,1
+DA:7,1
+DA:8,1
+DA:9,1
+DA:10,1
+DA:11,1
+DA:12,1
+DA:15,1
+LF:13
+LH:13
+BRDA:1,0,0,1
+BRDA:1,0,1,1
+BRF:2
+BRH:2
+end_of_record
+TN:
+SF:src\httpStatus\HttpSuccessStatus.ts
+FN:1,(anonymous_0)
+FNF:1
+FNH:1
+FNDA:1,(anonymous_0)
+DA:1,1
+DA:2,1
+DA:3,1
+DA:4,1
+DA:5,1
+DA:6,1
+DA:7,1
+DA:8,1
+DA:9,1
+DA:10,1
+DA:11,1
+DA:14,1
+LF:12
+LH:12
+BRDA:1,0,0,1
+BRDA:1,0,1,1
+BRF:2
+BRH:2
+end_of_record
+TN:
+SF:src\httpStatus\index.ts
+FNF:0
+FNH:0
+DA:8,0
+LF:1
+LH:0
+BRF:0
+BRH:0
+end_of_record

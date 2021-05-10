@@ -1,4 +1,7 @@
-import { HttpStatus } from '../lib';
+import { HttpStatus, HttpSuccessStatus } from '../lib';
 
-const OkStatusCode = HttpStatus.Ok;
-console.log(`"${OkStatusCode}" - should equals 200`);
+const okStatusCode = HttpStatus.Ok;
+console.log(`"${okStatusCode}" - should equals 200`);
+
+let anotherOkStatusCode: HttpStatus = HttpSuccessStatus.Ok;
+console.log(`"${anotherOkStatusCode}" - should equals 200`);
