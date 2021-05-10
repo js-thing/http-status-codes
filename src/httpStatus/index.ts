@@ -13,12 +13,17 @@ export const HttpStatus = {
   ...HttpServerErrorStatus,
 };
 
-export type HttpStatus = typeof HttpStatus;
+export type HttpStatus =
+  HttpInformationStatus |
+  HttpSuccessStatus |
+  HttpRedirectionStatus |
+  HttpClientErrorStatus |
+  HttpServerErrorStatus;
 
 export {
-    HttpInformationStatus,
-    HttpSuccessStatus,
-    HttpRedirectionStatus,
-    HttpClientErrorStatus,
-    HttpServerErrorStatus,
+  HttpInformationStatus,
+  HttpSuccessStatus,
+  HttpRedirectionStatus,
+  HttpClientErrorStatus,
+  HttpServerErrorStatus,
 };
