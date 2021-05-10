@@ -8,5 +8,6 @@
         "examples",
         "lib",
         "src/**/*.spec.ts"
-    ]
+    ],
+    "report-dir": "./coverage"
 }
