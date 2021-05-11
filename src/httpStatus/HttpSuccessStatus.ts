@@ -2,18 +2,25 @@
  * @enum Http Successful Responses
  */
 enum HttpSuccessStatus {
+    
     /**
-     * 200 OK - The request has succeeded. The meaning of the success depends on the HTTP method:
-     * GET: The resource has been fetched and is transmitted in the message body.
-     * HEAD: The entity headers are in the message body.
-     * PUT or POST: The resource describing the result
-     * of the action is transmitted in the message body.
-     * TRACE: The message body contains the request message as received by the server.
-     * For more details check out
-     * { @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200 }
-     * @type {number}
+     * ### 200 OK
+     * #### The request has succeeded. 
+     * 
+     * 
+     * The meaning of the success depends on the HTTP method:  
+     * 
+     * **GET:** The resource has been fetched and is transmitted in the message body.  
+     * **HEAD:** The entity headers are in the message body.  
+     * **PUT or POST:** The resource describing the result.  
+     * of the action is transmitted in the message body.  
+     * **TRACE:** The message body contains the request message as received by the server.
+     * 
+     * {@link https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200|Read more}
+     * 
      */
     Ok = 200,
+
     /**
     * 201 CREATED - The request has succeeded and a new resource has been created as a result.
     * This is typically the response sent after POST requests, or some PUT requests.
