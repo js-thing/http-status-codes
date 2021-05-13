@@ -1,4 +1,4 @@
-import httpStatus from './httpStatus';
+import HttpStatusCodes from './HttpStatusCodes';
 
-export * from './httpStatus';
-export default httpStatus;
+export * from './HttpStatusCodes';
+export default HttpStatusCodes;
