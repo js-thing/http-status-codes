@@ -7,9 +7,9 @@ import HttpServerErrorStatus from './HttpServerErrorStatus';
 /**
  * Enum for all HTTP status codes
  *
- * HTTP response status codes indicate whether a specific 
+ * HTTP response status codes indicate whether a specific
  * HTTP request has been successfully completed.
- * 
+ *
  * This enum is a combined enum of all HTTP status codes
  *
  * @readonly
