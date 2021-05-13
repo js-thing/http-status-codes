@@ -12,16 +12,24 @@ describe('HttpStatusCodes', () => {
             expect(HttpSuccessStatus.Ok).to.equal(HttpStatusCodes.Ok);
         });
         it('Continue from HttpInformationStatus should be equal', () => {
-            expect(HttpInformationStatus.Continue).to.equal(HttpStatusCodes.Continue);
+            expect(HttpInformationStatus.Continue).to.equal(
+                HttpStatusCodes.Continue
+            );
         });
         it('MovedPermanently from HttpRedirectionStatus should be equal', () => {
-            expect(HttpRedirectionStatus.MovedPermanently).to.equal(HttpStatusCodes.MovedPermanently);
+            expect(HttpRedirectionStatus.MovedPermanently).to.equal(
+                HttpStatusCodes.MovedPermanently
+            );
         });
         it('BadRequest from HttpClientErrorStatus should be equal', () => {
-            expect(HttpClientErrorStatus.BadRequest).to.equal(HttpStatusCodes.BadRequest);
+            expect(HttpClientErrorStatus.BadRequest).to.equal(
+                HttpStatusCodes.BadRequest
+            );
         });
         it('InternalServerError from HttpServerErrorStatus should be equal', () => {
-            expect(HttpServerErrorStatus.InternalServerError).to.equal(HttpStatusCodes.InternalServerError);
+            expect(HttpServerErrorStatus.InternalServerError).to.equal(
+                HttpStatusCodes.InternalServerError
+            );
         });
     });
 
@@ -31,19 +39,23 @@ describe('HttpStatusCodes', () => {
             expect(anyStatusCode).to.equal(HttpStatusCodes.Ok);
         });
         it('Continue from HttpInformationStatus should be assigned', () => {
-            const anyStatusCode: HttpStatusCodes = HttpInformationStatus.Continue;
+            const anyStatusCode: HttpStatusCodes =
+                HttpInformationStatus.Continue;
             expect(anyStatusCode).to.equal(HttpStatusCodes.Continue);
         });
         it('MovedPermanently from HttpRedirectionStatus should be assigned', () => {
-            const anyStatusCode: HttpStatusCodes = HttpRedirectionStatus.MovedPermanently;
+            const anyStatusCode: HttpStatusCodes =
+                HttpRedirectionStatus.MovedPermanently;
             expect(anyStatusCode).to.equal(HttpStatusCodes.MovedPermanently);
         });
         it('BadRequest from HttpClientErrorStatus should be assigned', () => {
-            const anyStatusCode: HttpStatusCodes = HttpClientErrorStatus.BadRequest;
+            const anyStatusCode: HttpStatusCodes =
+                HttpClientErrorStatus.BadRequest;
             expect(anyStatusCode).to.equal(HttpStatusCodes.BadRequest);
         });
         it('InternalServerError from HttpServerErrorStatus should be assigned', () => {
-            const anyStatusCode: HttpStatusCodes = HttpServerErrorStatus.InternalServerError;
+            const anyStatusCode: HttpStatusCodes =
+                HttpServerErrorStatus.InternalServerError;
             expect(anyStatusCode).to.equal(HttpStatusCodes.InternalServerError);
         });
     });

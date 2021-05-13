@@ -1,4 +1,4 @@
-const { HttpSuccessStatus } = require("../src");
+const HttpStatusCodes = require('../lib').default;
 
-const OkStatusCode = HttpStatus.Ok;
-console.log(`"${OkStatusCode}" - should equals 200`);
+const okStatusCode = HttpStatusCodes.Ok;
+console.log(`"${okStatusCode}" - should equals 200`);
