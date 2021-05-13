@@ -4,8 +4,9 @@
 
 ## Http Status Codes
 
-This library is a complete collection with _no dependencies_ of all `Http Status Codes` and `Reason Phrases` along with `helper functions` and can be used with `Typescript` or `Javascript`
+This library is a complete collection of all `Http Status Codes` and `Reason Phrases` along with `helper functions` with _no dependencies_ and is _100% compatible_ to use with `Typescript` or `Javascript`
 
+### Covers
 - Hypertext Transfer Protocol (HTTP/1.0) defined in 
 [RFC 1945](https://datatracker.ietf.org/doc/html/rfc1945)
 - Hypertext Transfer Protocol (HTTP/1.1) defined in 
@@ -17,7 +18,13 @@ This library is a complete collection with _no dependencies_ of all `Http Status
 
 ### Documentation
 
-The complete documentation can be found in this [link](https://js-thing.github.io/http-status-codes/)
+Each and every member of the enums are properly documented so that users get instant knowledge of the status code along with links to original sources.
+
+#### An example of VS Code IntelliSense
+
+![image](VS_Code_IntelliSense.png)
+
+The complete documentation of this project can be found in this [link](https://js-thing.github.io/http-status-codes/)
 
 ---
 
@@ -87,4 +94,4 @@ The documentation for this project is directly sourced from
 [Mozilla Contributors](https://developer.mozilla.org/en-US/docs/MDN/About/contributors.txt) is licensed under [CC-BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)
 
 The project excluding the documentation is licenced under
-[MIT](LICENCE)
+[MIT](LICENSE)
