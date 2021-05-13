@@ -8,13 +8,13 @@ import { expect } from 'chai';
 
 describe('HttpStatusCodes', () => {
     describe('#Check if merged enum codes are equal', () => {
-        it('OK from HttpSuccessStatus should be equal (one from each file)', () => {
-            expect(HttpSuccessStatus.Ok).to.equal(HttpStatusCodes.Ok);
-        });
         it('Continue from HttpInformationStatus should be equal', () => {
             expect(HttpInformationStatus.Continue).to.equal(
                 HttpStatusCodes.Continue
             );
+        });
+        it('OK from HttpSuccessStatus should be equal (one from each file)', () => {
+            expect(HttpSuccessStatus.Ok).to.equal(HttpStatusCodes.Ok);
         });
         it('MovedPermanently from HttpRedirectionStatus should be equal', () => {
             expect(HttpRedirectionStatus.MovedPermanently).to.equal(
@@ -34,14 +34,14 @@ describe('HttpStatusCodes', () => {
     });
 
     describe('#Check if enum instances are assignable', () => {
-        it('OK from HttpSuccessStatus should be assigned', () => {
-            const anyStatusCode: HttpStatusCodes = HttpSuccessStatus.Ok;
-            expect(anyStatusCode).to.equal(HttpStatusCodes.Ok);
-        });
         it('Continue from HttpInformationStatus should be assigned', () => {
             const anyStatusCode: HttpStatusCodes =
                 HttpInformationStatus.Continue;
             expect(anyStatusCode).to.equal(HttpStatusCodes.Continue);
+        });
+        it('OK from HttpSuccessStatus should be assigned', () => {
+            const anyStatusCode: HttpStatusCodes = HttpSuccessStatus.Ok;
+            expect(anyStatusCode).to.equal(HttpStatusCodes.Ok);
         });
         it('MovedPermanently from HttpRedirectionStatus should be assigned', () => {
             const anyStatusCode: HttpStatusCodes =
