@@ -173,7 +173,7 @@ enum HttpClientErrorStatus {
     LengthRequired = 411,
 
     /**
-     * ### 411 Length Required
+     * ### 412 Precondition Failed
      *
      * The client has indicated preconditions
      * in its headers which the server does not meet.
