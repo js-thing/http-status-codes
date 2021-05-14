@@ -1,6 +1,6 @@
 import isServerErrorStatus, {
     isServerErrorStatusCode,
-    isServerErrorStatusPhrase,
+    isServerErrorReasonPhrase,
     is5xxServerErrorStatusCode,
 } from './isServerErrorStatus';
 import {
@@ -35,25 +35,25 @@ describe('helper functions', () => {
         });
     });
 
-    describe('# isServerErrorStatusPhrase(statusPhrase)', () => {
+    describe('# isServerErrorReasonPhrase(statusPhrase)', () => {
         it('should return `true` if the argument is defined in HttpServerErrorReasonPhrases', () => {
             expect(
-                isServerErrorStatusPhrase(
+                isServerErrorReasonPhrase(
                     HttpServerErrorReasonPhrases.BadGateway
                 )
             ).to.be.true;
         });
         it('should return `true` if the argument is a valid reason phrase string', () => {
-            expect(isServerErrorStatusPhrase('Internal Server Error')).to.be
+            expect(isServerErrorReasonPhrase('Internal Server Error')).to.be
                 .true;
         });
         it('should return `false` if the argument is not defined in HttpServerErrorReasonPhrases', () => {
             expect(
-                isServerErrorStatusPhrase(HttpClientErrorReasonPhrases.NotFound)
+                isServerErrorReasonPhrase(HttpClientErrorReasonPhrases.NotFound)
             ).to.be.false;
         });
         it('should return `false` if the argument is not a valid reason phrase string', () => {
-            expect(isServerErrorStatusPhrase('Length Required')).to.be.false;
+            expect(isServerErrorReasonPhrase('Length Required')).to.be.false;
         });
     });
 

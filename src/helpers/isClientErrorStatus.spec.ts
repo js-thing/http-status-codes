@@ -1,6 +1,6 @@
 import isClientErrorStatus, {
     isClientErrorStatusCode,
-    isClientErrorStatusPhrase,
+    isClientErrorReasonPhrase,
     is4xxClientErrorStatusCode,
 } from './isClientErrorStatus';
 import {
@@ -35,26 +35,26 @@ describe('helper functions', () => {
         });
     });
 
-    describe('# isClientErrorStatusPhrase(statusPhrase)', () => {
+    describe('# isClientErrorReasonPhrase(statusPhrase)', () => {
         it('should return `true` if the argument is defined in HttpClientErrorReasonPhrases', () => {
             expect(
-                isClientErrorStatusPhrase(
+                isClientErrorReasonPhrase(
                     HttpClientErrorReasonPhrases.BadRequest
                 )
             ).to.be.true;
         });
         it('should return `true` if the argument is a valid reason phrase string', () => {
-            expect(isClientErrorStatusPhrase('Forbidden')).to.be.true;
+            expect(isClientErrorReasonPhrase('Forbidden')).to.be.true;
         });
         it('should return `false` if the argument is not defined in HttpClientErrorReasonPhrases', () => {
             expect(
-                isClientErrorStatusPhrase(
+                isClientErrorReasonPhrase(
                     HttpServerErrorReasonPhrases.InternalServerError
                 )
             ).to.be.false;
         });
         it('should return `false` if the argument is not a valid reason phrase string', () => {
-            expect(isClientErrorStatusPhrase('Internal Server Error')).to.be
+            expect(isClientErrorReasonPhrase('Internal Server Error')).to.be
                 .false;
         });
     });

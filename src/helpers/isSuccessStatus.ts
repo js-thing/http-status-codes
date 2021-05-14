@@ -29,7 +29,7 @@ export const is2xxSuccessStatusCode = (statusCode: number) =>
  * @param reasonPhrase - The reason phrase. e.g. 'Ok'
  * @returns `true` if matches `false` otherwise
  */
-export const isSuccessStatusPhrase = (reasonPhrase: string) =>
+export const isSuccessReasonPhrase = (reasonPhrase: string) =>
     (<any>Object).values(HttpSuccessReasonPhrases).includes(reasonPhrase) ===
     true;
 
@@ -45,6 +45,6 @@ export const isSuccessStatusPhrase = (reasonPhrase: string) =>
  */
 export const isSuccessStatus = (status: string | number) =>
     isSuccessStatusCode(status as number) ||
-    isSuccessStatusPhrase(status as string);
+    isSuccessReasonPhrase(status as string);
 
 export default isSuccessStatus;

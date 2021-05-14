@@ -29,7 +29,7 @@ export const is5xxServerErrorStatusCode = (statusCode: number) =>
  * @param reasonPhrase - The reason phrase. e.g. 'Ok'
  * @returns `true` if matches `false` otherwise
  */
-export const isServerErrorStatusPhrase = (reasonPhrase: string) =>
+export const isServerErrorReasonPhrase = (reasonPhrase: string) =>
     (<any>Object)
         .values(HttpServerErrorReasonPhrases)
         .includes(reasonPhrase) === true;
@@ -46,6 +46,6 @@ export const isServerErrorStatusPhrase = (reasonPhrase: string) =>
  */
 export const isServerErrorStatus = (status: string | number) =>
     isServerErrorStatusCode(status as number) ||
-    isServerErrorStatusPhrase(status as string);
+    isServerErrorReasonPhrase(status as string);
 
 export default isServerErrorStatus;

@@ -29,7 +29,7 @@ export const is1xxInformationStatusCode = (statusCode: number) =>
  * @param reasonPhrase - The reason phrase. e.g. 'Ok'
  * @returns `true` if matches `false` otherwise
  */
-export const isInformationStatusPhrase = (reasonPhrase: string) =>
+export const isInformationReasonPhrase = (reasonPhrase: string) =>
     (<any>Object)
         .values(HttpInformationReasonPhrases)
         .includes(reasonPhrase) === true;
@@ -46,6 +46,6 @@ export const isInformationStatusPhrase = (reasonPhrase: string) =>
  */
 export const isInformationStatus = (status: string | number) =>
     isInformationStatusCode(status as number) ||
-    isInformationStatusPhrase(status as string);
+    isInformationReasonPhrase(status as string);
 
 export default isInformationStatus;
