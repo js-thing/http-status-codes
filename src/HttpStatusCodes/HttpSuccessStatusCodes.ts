@@ -6,7 +6,7 @@
  * @readonly
  * @enum {number}
  */
-enum HttpSuccessStatus {
+enum HttpSuccessStatusCodes {
     /**
      * ### 200 OK
      *
@@ -143,4 +143,4 @@ enum HttpSuccessStatus {
     IMUsed = 226,
 }
 
-export default HttpSuccessStatus;
+export default HttpSuccessStatusCodes;

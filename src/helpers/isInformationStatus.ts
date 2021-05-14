@@ -1,5 +1,5 @@
 import { HttpInformationStatus } from '../HttpStatusCodes';
-import { HttpInformationStatusReasonPhrases } from '../HttpStatusCodeReasonPhrases';
+import { HttpInformationReasonPhrases } from '../HttpReasonPhrases';
 
 /**
  * Checks whether the status code belongs to `HttpInformationStatus` enum.
@@ -22,7 +22,7 @@ export const is1xxInformationStatusCode = (statusCode: number) =>
     statusCode >= 100 && statusCode <= 199;
 
 /**
- * Checks whether the input string belongs to `HttpInformationStatusReasonPhrases` enum.
+ * Checks whether the input string belongs to `HttpInformationReasonPhrases` enum.
  *
  * The match is case sensitive
  *
@@ -31,12 +31,12 @@ export const is1xxInformationStatusCode = (statusCode: number) =>
  */
 export const isInformationStatusPhrase = (reasonPhrase: string) =>
     (<any>Object)
-        .values(HttpInformationStatusReasonPhrases)
+        .values(HttpInformationReasonPhrases)
         .includes(reasonPhrase) === true;
 
 /**
  * Checks whether the input integer or string belongs to
- * `HttpInformationStatus` or `HttpInformationStatusReasonPhrases` enum.
+ * `HttpInformationStatus` or `HttpInformationReasonPhrases` enum.
  * For integer input, the range is all standard code between [100 - 199].
  * For string input, the match is case sensitive.
  *

@@ -4,7 +4,7 @@
  * @readonly
  * @enum {string}
  */
-enum HttpSuccessStatusReasonPhrases {
+enum HttpSuccessReasonPhrases {
     /**
      * ### 200 OK
      *
@@ -141,4 +141,4 @@ enum HttpSuccessStatusReasonPhrases {
     IMUsed = 'IM Used',
 }
 
-export default HttpSuccessStatusReasonPhrases;
+export default HttpSuccessReasonPhrases;

@@ -8,9 +8,9 @@ import {
     HttpClientErrorStatus,
 } from '../HttpStatusCodes';
 import {
-    HttpClientErrorStatusReasonPhrases,
-    HttpServerErrorStatusReasonPhrase,
-} from '../HttpStatusCodeReasonPhrases';
+    HttpClientErrorReasonPhrases,
+    HttpServerErrorReasonPhrases,
+} from '../HttpReasonPhrases';
 
 import { expect } from 'chai';
 
@@ -36,10 +36,10 @@ describe('helper functions', () => {
     });
 
     describe('# isServerErrorStatusPhrase(statusPhrase)', () => {
-        it('should return `true` if the argument is defined in HttpServerErrorStatusReasonPhrase', () => {
+        it('should return `true` if the argument is defined in HttpServerErrorReasonPhrases', () => {
             expect(
                 isServerErrorStatusPhrase(
-                    HttpServerErrorStatusReasonPhrase.BadGateway
+                    HttpServerErrorReasonPhrases.BadGateway
                 )
             ).to.be.true;
         });
@@ -47,11 +47,9 @@ describe('helper functions', () => {
             expect(isServerErrorStatusPhrase('Internal Server Error')).to.be
                 .true;
         });
-        it('should return `false` if the argument is not defined in HttpServerErrorStatusReasonPhrase', () => {
+        it('should return `false` if the argument is not defined in HttpServerErrorReasonPhrases', () => {
             expect(
-                isServerErrorStatusPhrase(
-                    HttpClientErrorStatusReasonPhrases.NotFound
-                )
+                isServerErrorStatusPhrase(HttpClientErrorReasonPhrases.NotFound)
             ).to.be.false;
         });
         it('should return `false` if the argument is not a valid reason phrase string', () => {
@@ -76,20 +74,16 @@ describe('helper functions', () => {
             expect(isServerErrorStatus(404)).to.be.false;
         });
 
-        it('should return `true` if the argument is defined in HttpServerErrorStatusReasonPhrase', () => {
-            expect(
-                isServerErrorStatus(
-                    HttpServerErrorStatusReasonPhrase.BadGateway
-                )
-            ).to.be.true;
+        it('should return `true` if the argument is defined in HttpServerErrorReasonPhrases', () => {
+            expect(isServerErrorStatus(HttpServerErrorReasonPhrases.BadGateway))
+                .to.be.true;
         });
         it('should return `true` if the argument is a valid reason phrase string', () => {
             expect(isServerErrorStatus('Internal Server Error')).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpServerErrorStatusReasonPhrase', () => {
-            expect(
-                isServerErrorStatus(HttpClientErrorStatusReasonPhrases.NotFound)
-            ).to.be.false;
+        it('should return `false` if the argument is not defined in HttpServerErrorReasonPhrases', () => {
+            expect(isServerErrorStatus(HttpClientErrorReasonPhrases.NotFound))
+                .to.be.false;
         });
         it('should return `false` if the argument is not a valid reason phrase string', () => {
             expect(isServerErrorStatus('Length Required')).to.be.false;

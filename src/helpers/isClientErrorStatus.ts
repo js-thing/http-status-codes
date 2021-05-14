@@ -1,5 +1,5 @@
 import { HttpClientErrorStatus } from '../HttpStatusCodes';
-import { HttpClientErrorStatusReasonPhrases } from '../HttpStatusCodeReasonPhrases';
+import { HttpClientErrorReasonPhrases } from '../HttpReasonPhrases';
 
 /**
  * Checks whether the status code belongs to `HttpClientErrorStatus` enum.
@@ -22,7 +22,7 @@ export const is4xxClientErrorStatusCode = (statusCode: number) =>
     statusCode >= 400 && statusCode <= 499;
 
 /**
- * Checks whether the input string belongs to `HttpClientErrorStatusReasonPhrases` enum.
+ * Checks whether the input string belongs to `HttpClientErrorReasonPhrases` enum.
  *
  * The match is case sensitive
  *
@@ -31,12 +31,12 @@ export const is4xxClientErrorStatusCode = (statusCode: number) =>
  */
 export const isClientErrorStatusPhrase = (reasonPhrase: string) =>
     (<any>Object)
-        .values(HttpClientErrorStatusReasonPhrases)
+        .values(HttpClientErrorReasonPhrases)
         .includes(reasonPhrase) === true;
 
 /**
  * Checks whether the input integer or string belongs to
- * `HttpClientErrorStatus` or `HttpClientErrorStatusReasonPhrases` enum.
+ * `HttpClientErrorStatus` or `HttpClientErrorReasonPhrases` enum.
  * For integer input, the range is all standard code between [400 - 499].
  * For string input, the match is case sensitive.
  *

@@ -1,10 +1,12 @@
 /**
- * Enum for HTTP information response reason phrases
+ * Enum for HTTP information response status codes
+ *
+ * The values can range from (100–199)
  *
  * @readonly
- * @enum {string}
+ * @enum {number}
  */
-enum HttpInformationStatusReasonPhrases {
+enum HttpInformationStatusCodes {
     /**
      * ### 100 Continue
      *
@@ -14,9 +16,9 @@ enum HttpInformationStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/100)
      *
-     * @type {string}
+     * @type {number}
      */
-    Continue = 'Continue',
+    Continue = 100,
 
     /**
      * ### 101 Switching Protocol
@@ -28,9 +30,9 @@ enum HttpInformationStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/101)
      *
-     * @type {string}
+     * @type {number}
      */
-    SwitchingProtocol = 'Switching Protocol',
+    SwitchingProtocol = 101,
 
     /**
      * ### 102 Processing (WebDAV)
@@ -40,9 +42,9 @@ enum HttpInformationStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/102)
      *
-     * @type {string}
+     * @type {number}
      */
-    Processing = 'Processing',
+    Processing = 102,
 
     /**
      * ### 103 Early Hints
@@ -55,9 +57,9 @@ enum HttpInformationStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/103)
      *
-     * @type {string}
+     * @type {number}
      */
-    EarlyHints = 'Early Hints',
+    EarlyHints = 103,
 }
 
-export default HttpInformationStatusReasonPhrases;
+export default HttpInformationStatusCodes;

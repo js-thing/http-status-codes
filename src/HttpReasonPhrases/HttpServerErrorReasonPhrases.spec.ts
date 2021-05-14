@@ -1,24 +1,24 @@
-import HttpServerErrorStatusReasonPhrase from './HttpServerErrorStatusReasonPhrase';
+import HttpServerErrorReasonPhrases from './HttpServerErrorReasonPhrases';
 import { expect } from 'chai';
 
-describe('HttpServerErrorStatusReasonPhrase', () => {
+describe('HttpServerErrorReasonPhrase', () => {
     describe('#InternalServerError', () => {
         it('status code should be equal to Internal Server Error', () => {
             expect(
-                HttpServerErrorStatusReasonPhrase.InternalServerError
+                HttpServerErrorReasonPhrases.InternalServerError
             ).to.equal('Internal Server Error');
         });
     });
     describe('#NotImplemented', () => {
         it('status code should be equal to Not Implemented', () => {
-            expect(HttpServerErrorStatusReasonPhrase.NotImplemented).to.equal(
+            expect(HttpServerErrorReasonPhrases.NotImplemented).to.equal(
                 'Not Implemented'
             );
         });
     });
     describe('#BadGateway', () => {
         it('status code should be equal to Bad Gateway', () => {
-            expect(HttpServerErrorStatusReasonPhrase.BadGateway).to.equal(
+            expect(HttpServerErrorReasonPhrases.BadGateway).to.equal(
                 'Bad Gateway'
             );
         });
@@ -26,13 +26,13 @@ describe('HttpServerErrorStatusReasonPhrase', () => {
     describe('#ServiceUnavailable', () => {
         it('status code should be equal to Service Unavailable', () => {
             expect(
-                HttpServerErrorStatusReasonPhrase.ServiceUnavailable
+                HttpServerErrorReasonPhrases.ServiceUnavailable
             ).to.equal('Service Unavailable');
         });
     });
     describe('#GatewayTimeout', () => {
         it('status code should be equal to Gateway Timeout', () => {
-            expect(HttpServerErrorStatusReasonPhrase.GatewayTimeout).to.equal(
+            expect(HttpServerErrorReasonPhrases.GatewayTimeout).to.equal(
                 'Gateway Timeout'
             );
         });
@@ -40,34 +40,34 @@ describe('HttpServerErrorStatusReasonPhrase', () => {
     describe('#HTTPVersionNotSupported', () => {
         it('status code should be equal to HTTP Version Not Supported', () => {
             expect(
-                HttpServerErrorStatusReasonPhrase.HTTPVersionNotSupported
+                HttpServerErrorReasonPhrases.HTTPVersionNotSupported
             ).to.equal('HTTP Version Not Supported');
         });
     });
     describe('#VariantAlsoNegotiates', () => {
         it('status code should be equal to Variant Also Negotiates', () => {
             expect(
-                HttpServerErrorStatusReasonPhrase.VariantAlsoNegotiates
+                HttpServerErrorReasonPhrases.VariantAlsoNegotiates
             ).to.equal('Variant Also Negotiates');
         });
     });
     describe('#InsufficientStorage', () => {
         it('status code should be equal to Insufficient Storage', () => {
             expect(
-                HttpServerErrorStatusReasonPhrase.InsufficientStorage
+                HttpServerErrorReasonPhrases.InsufficientStorage
             ).to.equal('Insufficient Storage');
         });
     });
     describe('#LoopDetected', () => {
         it('status code should be equal to Loop Detected', () => {
-            expect(HttpServerErrorStatusReasonPhrase.LoopDetected).to.equal(
+            expect(HttpServerErrorReasonPhrases.LoopDetected).to.equal(
                 'Loop Detected'
             );
         });
     });
     describe('#NotExtended', () => {
         it('status code should be equal to Not Extended', () => {
-            expect(HttpServerErrorStatusReasonPhrase.NotExtended).to.equal(
+            expect(HttpServerErrorReasonPhrases.NotExtended).to.equal(
                 'Not Extended'
             );
         });
@@ -75,7 +75,7 @@ describe('HttpServerErrorStatusReasonPhrase', () => {
     describe('#NetworkAuthenticationRequired', () => {
         it('status code should be equal to Network Authentication Required', () => {
             expect(
-                HttpServerErrorStatusReasonPhrase.NetworkAuthenticationRequired
+                HttpServerErrorReasonPhrases.NetworkAuthenticationRequired
             ).to.equal('Network Authentication Required');
         });
     });

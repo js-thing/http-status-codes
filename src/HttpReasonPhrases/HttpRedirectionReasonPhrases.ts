@@ -4,7 +4,7 @@
  * @readonly
  * @enum {string}
  */
-enum HttpRedirectionStatusReasonPhrases {
+enum HttpRedirectionReasonPhrases {
     /**
      * ### 300 Multiple Choice
      *
@@ -124,4 +124,4 @@ enum HttpRedirectionStatusReasonPhrases {
     PermanentRedirect = 'Permanent Redirect',
 }
 
-export default HttpRedirectionStatusReasonPhrases;
+export default HttpRedirectionReasonPhrases;

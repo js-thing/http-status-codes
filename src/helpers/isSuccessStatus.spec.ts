@@ -5,9 +5,9 @@ import isSuccessStatus, {
 } from './isSuccessStatus';
 import { HttpSuccessStatus, HttpServerErrorStatus } from '../HttpStatusCodes';
 import {
-    HttpSuccessStatusReasonPhrases,
-    HttpServerErrorStatusReasonPhrase,
-} from '../HttpStatusCodeReasonPhrases';
+    HttpSuccessReasonPhrases,
+    HttpServerErrorReasonPhrases,
+} from '../HttpReasonPhrases';
 
 import { expect } from 'chai';
 
@@ -30,17 +30,17 @@ describe('helper functions', () => {
     });
 
     describe('# isSuccessStatusPhrase(statusPhrase)', () => {
-        it('should return `true` if the argument is defined in HttpSuccessStatusReasonPhrases', () => {
-            expect(isSuccessStatusPhrase(HttpSuccessStatusReasonPhrases.Ok)).to
-                .be.true;
+        it('should return `true` if the argument is defined in HttpSuccessReasonPhrases', () => {
+            expect(isSuccessStatusPhrase(HttpSuccessReasonPhrases.Ok)).to.be
+                .true;
         });
         it('should return `true` if the argument is a valid reason phrase string', () => {
             expect(isSuccessStatusPhrase('No Content')).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpSuccessStatusReasonPhrases', () => {
+        it('should return `false` if the argument is not defined in HttpSuccessReasonPhrases', () => {
             expect(
                 isSuccessStatusPhrase(
-                    HttpServerErrorStatusReasonPhrase.InternalServerError
+                    HttpServerErrorReasonPhrases.InternalServerError
                 )
             ).to.be.false;
         });
@@ -64,17 +64,16 @@ describe('helper functions', () => {
             expect(isSuccessStatus(404)).to.be.false;
         });
 
-        it('should return `true` if the argument is defined in HttpSuccessStatusReasonPhrases', () => {
-            expect(isSuccessStatus(HttpSuccessStatusReasonPhrases.Ok)).to.be
-                .true;
+        it('should return `true` if the argument is defined in HttpSuccessReasonPhrases', () => {
+            expect(isSuccessStatus(HttpSuccessReasonPhrases.Ok)).to.be.true;
         });
         it('should return `true` if the argument is a valid reason phrase string', () => {
             expect(isSuccessStatus('No Content')).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpSuccessStatusReasonPhrases', () => {
+        it('should return `false` if the argument is not defined in HttpSuccessReasonPhrases', () => {
             expect(
                 isSuccessStatus(
-                    HttpServerErrorStatusReasonPhrase.InternalServerError
+                    HttpServerErrorReasonPhrases.InternalServerError
                 )
             ).to.be.false;
         });
