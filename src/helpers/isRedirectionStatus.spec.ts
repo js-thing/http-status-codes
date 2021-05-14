@@ -8,9 +8,9 @@ import {
     HttpServerErrorStatus,
 } from '../HttpStatusCodes';
 import {
-    HttpRedirectionStatusReasonPhrases,
-    HttpServerErrorStatusReasonPhrase,
-} from '../HttpStatusCodeReasonPhrases';
+    HttpRedirectionReasonPhrases,
+    HttpServerErrorReasonPhrases,
+} from '../HttpReasonPhrases';
 
 import { expect } from 'chai';
 
@@ -37,20 +37,20 @@ describe('redirection helper functions', () => {
     });
 
     describe('# isRedirectionStatusPhrase(statusPhrase)', () => {
-        it('should return `true` if the argument is defined in HttpRedirectionStatusReasonPhrases', () => {
+        it('should return `true` if the argument is defined in HttpRedirectionReasonPhrases', () => {
             expect(
                 isRedirectionStatusPhrase(
-                    HttpRedirectionStatusReasonPhrases.PermanentRedirect
+                    HttpRedirectionReasonPhrases.PermanentRedirect
                 )
             ).to.be.true;
         });
         it('should return `true` if the argument is a valid reason phrase string', () => {
             expect(isRedirectionStatusPhrase('Moved Permanently')).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpRedirectionStatusReasonPhrases', () => {
+        it('should return `false` if the argument is not defined in HttpRedirectionReasonPhrases', () => {
             expect(
                 isRedirectionStatusPhrase(
-                    HttpServerErrorStatusReasonPhrase.InternalServerError
+                    HttpServerErrorReasonPhrases.InternalServerError
                 )
             ).to.be.false;
         });
@@ -77,20 +77,20 @@ describe('redirection helper functions', () => {
             expect(isRedirectionStatus(404)).to.be.false;
         });
 
-        it('should return `true` if the argument is defined in HttpRedirectionStatusReasonPhrases', () => {
+        it('should return `true` if the argument is defined in HttpRedirectionReasonPhrases', () => {
             expect(
                 isRedirectionStatus(
-                    HttpRedirectionStatusReasonPhrases.PermanentRedirect
+                    HttpRedirectionReasonPhrases.PermanentRedirect
                 )
             ).to.be.true;
         });
         it('should return `true` if the argument is a valid reason phrase string', () => {
             expect(isRedirectionStatus('Moved Permanently')).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpRedirectionStatusReasonPhrases', () => {
+        it('should return `false` if the argument is not defined in HttpRedirectionReasonPhrases', () => {
             expect(
                 isRedirectionStatus(
-                    HttpServerErrorStatusReasonPhrase.InternalServerError
+                    HttpServerErrorReasonPhrases.InternalServerError
                 )
             ).to.be.false;
         });

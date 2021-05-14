@@ -6,7 +6,7 @@
  * @readonly
  * @enum {number}
  */
-enum HttpServerErrorStatus {
+enum HttpServerErrorStatusCodes {
     /**
      * ### 500 Internal Server Error
      *
@@ -146,4 +146,4 @@ enum HttpServerErrorStatus {
     NetworkAuthenticationRequired = 511,
 }
 
-export default HttpServerErrorStatus;
+export default HttpServerErrorStatusCodes;

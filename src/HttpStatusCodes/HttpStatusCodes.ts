@@ -1,8 +1,8 @@
-import HttpInformationStatus from './HttpInformationStatus';
-import HttpSuccessStatus from './HttpSuccessStatus';
-import HttpRedirectionStatus from './HttpRedirectionStatus';
-import HttpClientErrorStatus from './HttpClientErrorStatus';
-import HttpServerErrorStatus from './HttpServerErrorStatus';
+import HttpInformationStatusCodes from './HttpInformationStatusCodes';
+import HttpSuccessStatusCodes from './HttpSuccessStatusCodes';
+import HttpRedirectionStatusCodes from './HttpRedirectionStatusCodes';
+import HttpClientErrorStatusCodes from './HttpClientErrorStatusCodes';
+import HttpServerErrorStatusCodes from './HttpServerErrorStatusCodes';
 
 /**
  * Enum for all HTTP status codes
@@ -17,19 +17,19 @@ import HttpServerErrorStatus from './HttpServerErrorStatus';
  */
 // tslint:disable-next-line:variable-name
 export const HttpStatusCodes = {
-  ...HttpInformationStatus,
-  ...HttpSuccessStatus,
-  ...HttpRedirectionStatus,
-  ...HttpClientErrorStatus,
-  ...HttpServerErrorStatus,
+  ...HttpInformationStatusCodes,
+  ...HttpSuccessStatusCodes,
+  ...HttpRedirectionStatusCodes,
+  ...HttpClientErrorStatusCodes,
+  ...HttpServerErrorStatusCodes,
 };
 
 /**
  * The type for HttpStatusCodes
  */
 export type HttpStatusCodes =
-    | HttpInformationStatus
-    | HttpSuccessStatus
-    | HttpRedirectionStatus
-    | HttpClientErrorStatus
-    | HttpServerErrorStatus;
+    | HttpInformationStatusCodes
+    | HttpSuccessStatusCodes
+    | HttpRedirectionStatusCodes
+    | HttpClientErrorStatusCodes
+    | HttpServerErrorStatusCodes;

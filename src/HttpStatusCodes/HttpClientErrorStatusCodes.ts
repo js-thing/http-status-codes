@@ -1,10 +1,12 @@
 /**
- * Enum for HTTP client error response reason phrases
+ * Enum for HTTP client error response status codes
+ *
+ * The values can range from (400–499)
  *
  * @readonly
- * @enum {string}
+ * @enum {number}
  */
-enum HttpClientErrorStatusReasonPhrases {
+enum HttpClientErrorStatusCodes {
     /**
      * ### 400 Bad Request
      *
@@ -12,9 +14,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400)
      *
-     * @type {string}
+     * @type {number}
      */
-    BadRequest = 'Bad Request',
+    BadRequest = 400,
 
     /**
      * ### 401 Unauthorized
@@ -25,9 +27,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401)
      *
-     * @type {string}
+     * @type {number}
      */
-    UnAuthorised = 'Unauthorized',
+    UnAuthorised = 401,
 
     /**
      * ### 402 Payment Required
@@ -38,9 +40,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402)
      *
-     * @type {string}
+     * @type {number}
      */
-    PaymentRequired = 'Payment Required',
+    PaymentRequired = 402,
 
     /**
      * ### 403 Forbidden
@@ -51,9 +53,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403)
      *
-     * @type {string}
+     * @type {number}
      */
-    Forbidden = 'Forbidden',
+    Forbidden = 403,
 
     /**
      * ### 404 Not Found
@@ -68,9 +70,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404)
      *
-     * @type {string}
+     * @type {number}
      */
-    NotFound = 'Not Found',
+    NotFound = 404,
 
     /**
      * ### 405 Method Not Allowed
@@ -83,9 +85,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405)
      *
-     * @type {string}
+     * @type {number}
      */
-    MethodNotAllowed = 'Method Not Allowed',
+    MethodNotAllowed = 405,
 
     /**
      * ### 406 Not Acceptable
@@ -96,9 +98,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/406)
      *
-     * @type {string}
+     * @type {number}
      */
-    NotAcceptable = 'Not Acceptable',
+    NotAcceptable = 406,
 
     /**
      * ### 407 Proxy Authentication Required
@@ -108,9 +110,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407)
      *
-     * @type {string}
+     * @type {number}
      */
-    ProxyAuthenticationRequired = 'Proxy Authentication Required',
+    ProxyAuthenticationRequired = 407,
 
     /**
      * ### 408 Request Timeout
@@ -124,9 +126,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/408)
      *
-     * @type {string}
+     * @type {number}
      */
-    RequestTimeout = 'Request Timeout',
+    RequestTimeout = 408,
 
     /**
      * ### 409 Conflict
@@ -136,9 +138,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/409)
      *
-     * @type {string}
+     * @type {number}
      */
-    Conflict = 'Conflict',
+    Conflict = 409,
 
     /**
      * ### 410 Gone
@@ -154,9 +156,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/410)
      *
-     * @type {string}
+     * @type {number}
      */
-    Gone = 'Gone',
+    Gone = 410,
 
     /**
      * ### 411 Length Required
@@ -166,9 +168,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/411)
      *
-     * @type {string}
+     * @type {number}
      */
-    LengthRequired = 'Length Required',
+    LengthRequired = 411,
 
     /**
      * ### 412 Precondition Failed
@@ -178,9 +180,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/412)
      *
-     * @type {string}
+     * @type {number}
      */
-    PreconditionFailed = 'Precondition Failed',
+    PreconditionFailed = 412,
 
     /**
      * ### 413 Payload Too Large
@@ -190,9 +192,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/413)
      *
-     * @type {string}
+     * @type {number}
      */
-    PayloadTooLarge = 'Payload Too Large',
+    PayloadTooLarge = 413,
 
     /**
      * ### 414 URI Too Long
@@ -202,9 +204,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/414)
      *
-     * @type {string}
+     * @type {number}
      */
-    URITooLong = 'URI Too Long',
+    URITooLong = 414,
 
     /**
      * ### 415 Unsupported Media Type
@@ -215,9 +217,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/415)
      *
-     * @type {string}
+     * @type {number}
      */
-    UnsupportedMediaType = 'Unsupported Media Type',
+    UnsupportedMediaType = 415,
 
     /**
      * ### 416 Range Not Satisfiable
@@ -228,9 +230,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/416)
      *
-     * @type {string}
+     * @type {number}
      */
-    RangeNotSatisfiable = 'Range Not Satisfiable',
+    RangeNotSatisfiable = 416,
 
     /**
      * ### 417 Expectation Failed
@@ -240,9 +242,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/417)
      *
-     * @type {string}
+     * @type {number}
      */
-    ExpectationFailed = 'Expectation Failed',
+    ExpectationFailed = 417,
 
     /**
      * ### 418 I'm a teapot
@@ -251,9 +253,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418)
      *
-     * @type {string}
+     * @type {number}
      */
-    IAmATeapot = "I'm a teapot",
+    IAmATeapot = 418,
 
     /**
      * ### 421 Misdirected Request
@@ -266,9 +268,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/421)
      *
-     * @type {string}
+     * @type {number}
      */
-    MisdirectedRequest = 'Misdirected Request',
+    MisdirectedRequest = 421,
 
     /**
      * ### 422 Unprocessable Entity (WebDAV)
@@ -278,9 +280,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422)
      *
-     * @type {string}
+     * @type {number}
      */
-    UnprocessableEntity = 'Unprocessable Entity',
+    UnprocessableEntity = 422,
 
     /**
      * ### 423 Locked (WebDAV)
@@ -289,9 +291,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/423)
      *
-     * @type {string}
+     * @type {number}
      */
-    Locked = 'Locked',
+    Locked = 423,
 
     /**
      * ### 424 Failed Dependency (WebDAV)
@@ -300,9 +302,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/424)
      *
-     * @type {string}
+     * @type {number}
      */
-    FailedDependency = 'Failed Dependency',
+    FailedDependency = 424,
 
     /**
      * ### 425 Too Early
@@ -312,9 +314,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/425)
      *
-     * @type {string}
+     * @type {number}
      */
-    TooEarly = 'Too Early',
+    TooEarly = 425,
 
     /**
      * ### 426 Upgrade Required
@@ -327,9 +329,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/426)
      *
-     * @type {string}
+     * @type {number}
      */
-    UpgradeRequired = 'Upgrade Required',
+    UpgradeRequired = 426,
 
     /**
      * ### 428 Precondition Required
@@ -341,9 +343,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/428)
      *
-     * @type {string}
+     * @type {number}
      */
-    PreconditionRequired = 'Precondition Required',
+    PreconditionRequired = 428,
 
     /**
      * ### 429 Too Many Requests
@@ -353,9 +355,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429)
      *
-     * @type {string}
+     * @type {number}
      */
-    TooManyRequests = 'Too Many Requests',
+    TooManyRequests = 429,
 
     /**
      * ### 431 Request Header Fields Too Large
@@ -366,9 +368,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/431)
      *
-     * @type {string}
+     * @type {number}
      */
-    RequestHeaderFieldsTooLarge = 'Request Header Fields Too Large',
+    RequestHeaderFieldsTooLarge = 431,
 
     /**
      * ### 451 Unavailable For Legal Reasons
@@ -379,9 +381,9 @@ enum HttpClientErrorStatusReasonPhrases {
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451)
      *
-     * @type {string}
+     * @type {number}
      */
-    UnavailableForLegalReasons = 'Unavailable For Legal Reasons',
+    UnavailableForLegalReasons = 451,
 }
 
-export default HttpClientErrorStatusReasonPhrases;
+export default HttpClientErrorStatusCodes;

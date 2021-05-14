@@ -1,5 +1,5 @@
 import { HttpSuccessStatus } from '../HttpStatusCodes';
-import { HttpSuccessStatusReasonPhrases } from '../HttpStatusCodeReasonPhrases';
+import { HttpSuccessReasonPhrases } from '../HttpReasonPhrases';
 
 /**
  * Checks whether the status code belongs to `HttpSuccessStatus` enum.
@@ -22,7 +22,7 @@ export const is2xxSuccessStatusCode = (statusCode: number) =>
     statusCode >= 200 && statusCode <= 299;
 
 /**
- * Checks whether the input string belongs to `HttpSuccessStatusReasonPhrases` enum.
+ * Checks whether the input string belongs to `HttpSuccessReasonPhrases` enum.
  *
  * The match is case sensitive
  *
@@ -30,13 +30,12 @@ export const is2xxSuccessStatusCode = (statusCode: number) =>
  * @returns `true` if matches `false` otherwise
  */
 export const isSuccessStatusPhrase = (reasonPhrase: string) =>
-    (<any>Object)
-        .values(HttpSuccessStatusReasonPhrases)
-        .includes(reasonPhrase) === true;
+    (<any>Object).values(HttpSuccessReasonPhrases).includes(reasonPhrase) ===
+    true;
 
 /**
  * Checks whether the input integer or string belongs to
- * `HttpSuccessStatus` or `HttpSuccessStatusReasonPhrases` enum.
+ * `HttpSuccessStatus` or `HttpSuccessReasonPhrases` enum.
  * For integer input, the range is all standard code between [200 - 299].
  * For string input, the match is case sensitive.
  *
