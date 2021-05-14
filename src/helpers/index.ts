@@ -4,3 +4,4 @@ export * from './isRedirectionStatus';
 export * from './isClientErrorStatus';
 export * from './isServerErrorStatus';
 export * from './getReasonPhrase';
+export * from './getCompositeStatus';
