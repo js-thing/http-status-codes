@@ -6,11 +6,11 @@ import HttpServerErrorStatusCodes from './HttpServerErrorStatusCodes';
 import { HttpStatusCodes } from './HttpStatusCodes';
 
 export {
-    HttpInformationStatusCodes as HttpInformationStatus,
-    HttpSuccessStatusCodes as HttpSuccessStatus,
-    HttpRedirectionStatusCodes as HttpRedirectionStatus,
-    HttpClientErrorStatusCodes as HttpClientErrorStatus,
-    HttpServerErrorStatusCodes as HttpServerErrorStatus,
+    HttpInformationStatusCodes,
+    HttpSuccessStatusCodes,
+    HttpRedirectionStatusCodes,
+    HttpClientErrorStatusCodes,
+    HttpServerErrorStatusCodes,
     HttpStatusCodes,
 };
 
