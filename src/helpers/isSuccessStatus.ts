@@ -1,8 +1,8 @@
-import { HttpSuccessStatus } from '../HttpStatusCodes';
+import { HttpSuccessStatusCodes } from '../HttpStatusCodes';
 import { HttpSuccessReasonPhrases } from '../HttpReasonPhrases';
 
 /**
- * Checks whether the status code belongs to `HttpSuccessStatus` enum.
+ * Checks whether the status code belongs to `HttpSuccessStatusCodes` enum.
  * The range is all standard code between [200 - 299]
  *
  * To check the entire 2xx range use `is2xxSuccessStatusCode(code: number)` instead.
@@ -10,7 +10,7 @@ import { HttpSuccessReasonPhrases } from '../HttpReasonPhrases';
  * @returns `true` if matches `false` otherwise
  */
 export const isSuccessStatusCode = (statusCode: number) =>
-    HttpSuccessStatus[statusCode] !== undefined;
+    HttpSuccessStatusCodes[statusCode] !== undefined;
 
 /**
  * Checks whether the status code belongs to 2xx family of status codes.
@@ -35,7 +35,7 @@ export const isSuccessReasonPhrase = (reasonPhrase: string) =>
 
 /**
  * Checks whether the input integer or string belongs to
- * `HttpSuccessStatus` or `HttpSuccessReasonPhrases` enum.
+ * `HttpSuccessStatusCodes` or `HttpSuccessReasonPhrases` enum.
  * For integer input, the range is all standard code between [200 - 299].
  * For string input, the match is case sensitive.
  *

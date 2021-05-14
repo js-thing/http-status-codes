@@ -4,8 +4,8 @@ import isInformationStatus, {
     is1xxInformationStatusCode,
 } from './isInformationStatus';
 import {
-    HttpInformationStatus,
-    HttpServerErrorStatus,
+    HttpInformationStatusCodes,
+    HttpServerErrorStatusCodes,
 } from '../HttpStatusCodes';
 import {
     HttpInformationReasonPhrases,
@@ -16,17 +16,17 @@ import { expect } from 'chai';
 
 describe('helper functions', () => {
     describe('# isInformationStatusCode(statusCode)', () => {
-        it('should return `true` if the argument is defined in HttpInformationStatus', () => {
-            expect(isInformationStatusCode(HttpInformationStatus.Continue)).to
+        it('should return `true` if the argument is defined in HttpInformationStatusCodes', () => {
+            expect(isInformationStatusCode(HttpInformationStatusCodes.Continue)).to
                 .be.true;
         });
         it('should return `true` if the argument is a valid defined code between [100 - 199]', () => {
             expect(isInformationStatusCode(101)).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpInformationStatus', () => {
+        it('should return `false` if the argument is not defined in HttpInformationStatusCodes', () => {
             expect(
                 isInformationStatusCode(
-                    HttpServerErrorStatus.InternalServerError
+                    HttpServerErrorStatusCodes.InternalServerError
                 )
             ).to.be.false;
         });
@@ -58,16 +58,16 @@ describe('helper functions', () => {
     });
 
     describe('# isInformationStatus(status)', () => {
-        it('should return `true` if the argument is defined in HttpInformationStatus', () => {
-            expect(isInformationStatus(HttpInformationStatus.Continue)).to.be
+        it('should return `true` if the argument is defined in HttpInformationStatusCodes', () => {
+            expect(isInformationStatus(HttpInformationStatusCodes.Continue)).to.be
                 .true;
         });
         it('should return `true` if the argument is a valid defined code between [100 - 199]', () => {
             expect(isInformationStatus(101)).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpInformationStatus', () => {
+        it('should return `false` if the argument is not defined in HttpInformationStatusCodes', () => {
             expect(
-                isInformationStatus(HttpServerErrorStatus.InternalServerError)
+                isInformationStatus(HttpServerErrorStatusCodes.InternalServerError)
             ).to.be.false;
         });
         it('should return `false` if the argument is not a valid defined code between [100 - 199]', () => {

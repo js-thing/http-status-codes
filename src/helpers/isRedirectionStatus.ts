@@ -1,8 +1,8 @@
-import { HttpRedirectionStatus } from '../HttpStatusCodes';
+import { HttpRedirectionStatusCodes } from '../HttpStatusCodes';
 import { HttpRedirectionReasonPhrases } from '../HttpReasonPhrases';
 
 /**
- * Checks whether the status code belongs to `HttpRedirectionStatus` enum.
+ * Checks whether the status code belongs to `HttpRedirectionStatusCodes` enum.
  * The range is all standard code between [300 - 399]
  *
  * To check the entire 3xx range use `is3xxRedirectionStatusCode(code: number)` instead.
@@ -10,7 +10,7 @@ import { HttpRedirectionReasonPhrases } from '../HttpReasonPhrases';
  * @returns `true` if matches `false` otherwise
  */
 export const isRedirectionStatusCode = (statusCode: number) =>
-    HttpRedirectionStatus[statusCode] !== undefined;
+    HttpRedirectionStatusCodes[statusCode] !== undefined;
 
 /**
  * Checks whether the status code belongs to 3xx family of status codes.
@@ -36,7 +36,7 @@ export const isRedirectionReasonPhrase = (reasonPhrase: string) =>
 
 /**
  * Checks whether the input integer or string belongs to
- * `HttpRedirectionStatus` or `HttpRedirectionReasonPhrases` enum.
+ * `HttpRedirectionStatusCodes` or `HttpRedirectionReasonPhrases` enum.
  * For integer input, the range is all standard code between [300 - 399].
  * For string input, the match is case sensitive.
  *

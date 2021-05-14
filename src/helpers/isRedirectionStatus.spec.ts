@@ -4,8 +4,8 @@ import isRedirectionStatus, {
     is3xxRedirectionStatusCode,
 } from './isRedirectionStatus';
 import {
-    HttpRedirectionStatus,
-    HttpServerErrorStatus,
+    HttpRedirectionStatusCodes,
+    HttpServerErrorStatusCodes,
 } from '../HttpStatusCodes';
 import {
     HttpRedirectionReasonPhrases,
@@ -16,18 +16,18 @@ import { expect } from 'chai';
 
 describe('redirection helper functions', () => {
     describe('# isRedirectionStatusCode(statusCode)', () => {
-        it('should return `true` if the argument is defined in HttpRedirectionStatus', () => {
+        it('should return `true` if the argument is defined in HttpRedirectionStatusCodes', () => {
             expect(
-                isRedirectionStatusCode(HttpRedirectionStatus.MovedPermanently)
+                isRedirectionStatusCode(HttpRedirectionStatusCodes.MovedPermanently)
             ).to.be.true;
         });
         it('should return `true` if the argument is a valid defined code between [300 - 399]', () => {
             expect(isRedirectionStatusCode(300)).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpRedirectionStatus', () => {
+        it('should return `false` if the argument is not defined in HttpRedirectionStatusCodes', () => {
             expect(
                 isRedirectionStatusCode(
-                    HttpServerErrorStatus.InternalServerError
+                    HttpServerErrorStatusCodes.InternalServerError
                 )
             ).to.be.false;
         });
@@ -61,16 +61,16 @@ describe('redirection helper functions', () => {
     });
 
     describe('# isRedirectionStatus(status)', () => {
-        it('should return `true` if the argument is defined in HttpRedirectionStatus', () => {
-            expect(isRedirectionStatus(HttpRedirectionStatus.MovedPermanently))
+        it('should return `true` if the argument is defined in HttpRedirectionStatusCodes', () => {
+            expect(isRedirectionStatus(HttpRedirectionStatusCodes.MovedPermanently))
                 .to.be.true;
         });
         it('should return `true` if the argument is a valid defined code between [300 - 399]', () => {
             expect(isRedirectionStatus(300)).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpRedirectionStatus', () => {
+        it('should return `false` if the argument is not defined in HttpRedirectionStatusCodes', () => {
             expect(
-                isRedirectionStatus(HttpServerErrorStatus.InternalServerError)
+                isRedirectionStatus(HttpServerErrorStatusCodes.InternalServerError)
             ).to.be.false;
         });
         it('should return `false` if the argument is not a valid defined code between [300 - 399]', () => {

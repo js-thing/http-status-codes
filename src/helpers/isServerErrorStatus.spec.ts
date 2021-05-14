@@ -4,8 +4,8 @@ import isServerErrorStatus, {
     is5xxServerErrorStatusCode,
 } from './isServerErrorStatus';
 import {
-    HttpServerErrorStatus,
-    HttpClientErrorStatus,
+    HttpServerErrorStatusCodes,
+    HttpClientErrorStatusCodes,
 } from '../HttpStatusCodes';
 import {
     HttpClientErrorReasonPhrases,
@@ -16,18 +16,18 @@ import { expect } from 'chai';
 
 describe('helper functions', () => {
     describe('# isServerErrorStatusCode(statusCode)', () => {
-        it('should return `true` if the argument is defined in HttpServerErrorStatus', () => {
+        it('should return `true` if the argument is defined in HttpServerErrorStatusCodes', () => {
             expect(
                 isServerErrorStatusCode(
-                    HttpServerErrorStatus.InternalServerError
+                    HttpServerErrorStatusCodes.InternalServerError
                 )
             ).to.be.true;
         });
         it('should return `true` if the argument is a valid defined code between [500 - 599]', () => {
             expect(isServerErrorStatusCode(501)).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpServerErrorStatus', () => {
-            expect(isServerErrorStatusCode(HttpClientErrorStatus.BadRequest)).to
+        it('should return `false` if the argument is not defined in HttpServerErrorStatusCodes', () => {
+            expect(isServerErrorStatusCode(HttpClientErrorStatusCodes.BadRequest)).to
                 .be.false;
         });
         it('should return `false` if the argument is not a valid defined code between [500 - 599]', () => {
@@ -58,16 +58,16 @@ describe('helper functions', () => {
     });
 
     describe('# isServerErrorStatus(status)', () => {
-        it('should return `true` if the argument is defined in HttpServerErrorStatus', () => {
+        it('should return `true` if the argument is defined in HttpServerErrorStatusCodes', () => {
             expect(
-                isServerErrorStatus(HttpServerErrorStatus.InternalServerError)
+                isServerErrorStatus(HttpServerErrorStatusCodes.InternalServerError)
             ).to.be.true;
         });
         it('should return `true` if the argument is a valid defined code between [500 - 599]', () => {
             expect(isServerErrorStatus(501)).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpServerErrorStatus', () => {
-            expect(isServerErrorStatus(HttpClientErrorStatus.BadRequest)).to.be
+        it('should return `false` if the argument is not defined in HttpServerErrorStatusCodes', () => {
+            expect(isServerErrorStatus(HttpClientErrorStatusCodes.BadRequest)).to.be
                 .false;
         });
         it('should return `false` if the argument is not a valid defined code between [500 - 599]', () => {

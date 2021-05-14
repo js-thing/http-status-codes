@@ -41,22 +41,22 @@ npm install TBD
 Import the library to your project
 ```javascript
 import HttpStatusCodes, { 
-    HttpInformationStatus, 
-    HttpSuccessStatus,
-    HttpRedirectionStatus,
-    HttpClientErrorStatus,     
-    HttpServerErrorStatus,
+    HttpInformationStatusCodes, 
+    HttpSuccessStatusCodes,
+    HttpRedirectionStatusCodes,
+    HttpClientErrorStatusCodes,     
+    HttpServerErrorStatusCodes,
 } from 'TBD';
 ```
 
 Or
 ```javascript
 const { 
-    HttpInformationStatus, 
-    HttpSuccessStatus, 
-    HttpRedirectionStatus, 
-    HttpClientErrorStatus, 
-    HttpServerErrorStatus,
+    HttpInformationStatusCodes, 
+    HttpSuccessStatusCodes, 
+    HttpRedirectionStatusCodes, 
+    HttpClientErrorStatusCodes, 
+    HttpServerErrorStatusCodes,
     HttpStatusCodes,
 } = require('TBD');
 ```
@@ -69,7 +69,7 @@ const HttpStatusCodes = require('TBD').default;
 
 ### Usage
 
-The `HttpStatusCodes` is a combined enum of `HttpInformationStatus`, `HttpSuccessStatus`, `HttpRedirectionStatus`, `HttpClientErrorStatus`, `HttpServerErrorStatus`,
+The `HttpStatusCodes` is a combined enum of `HttpInformationStatusCodes`, `HttpSuccessStatusCodes`, `HttpRedirectionStatusCodes`, `HttpClientErrorStatusCodes` and `HttpServerErrorStatusCodes`,
 
 ```javascript
 // use the combined enum to access any status code
@@ -80,11 +80,11 @@ const code = HttpStatusCodes.BadRequest; // code = 400
 const code = HttpStatusCodes.InternalServerError; // code = 500
 
 // Or use the individual enum group
-const code = HttpInformationStatus.Continue; // code = 100
-const code = HttpSuccessStatus.Ok; // code = 200
-const code = HttpRedirectionStatus.Found; // code = 302
-const code = HttpClientErrorStatus.BadRequest; // code = 400
-const code = HttpServerErrorStatus.InternalServerError; // code = 500
+const code = HttpInformationStatusCodes.Continue; // code = 100
+const code = HttpSuccessStatusCodes.Ok; // code = 200
+const code = HttpRedirectionStatusCodes.Found; // code = 302
+const code = HttpClientErrorStatusCodes.BadRequest; // code = 400
+const code = HttpServerErrorStatusCodes.InternalServerError; // code = 500
 ```
 ---
 

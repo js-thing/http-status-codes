@@ -1,8 +1,8 @@
-import { HttpInformationStatus } from '../HttpStatusCodes';
+import { HttpInformationStatusCodes } from '../HttpStatusCodes';
 import { HttpInformationReasonPhrases } from '../HttpReasonPhrases';
 
 /**
- * Checks whether the status code belongs to `HttpInformationStatus` enum.
+ * Checks whether the status code belongs to `HttpInformationStatusCodes` enum.
  * The range is all standard code between [100 - 199]
  *
  * To check the entire 1xx range use `is1xxInformationStatusCode(code: number)` instead.
@@ -10,7 +10,7 @@ import { HttpInformationReasonPhrases } from '../HttpReasonPhrases';
  * @returns `true` if matches `false` otherwise
  */
 export const isInformationStatusCode = (statusCode: number) =>
-    HttpInformationStatus[statusCode] !== undefined;
+    HttpInformationStatusCodes[statusCode] !== undefined;
 
 /**
  * Checks whether the status code belongs to 1xx family of status codes.
@@ -36,7 +36,7 @@ export const isInformationReasonPhrase = (reasonPhrase: string) =>
 
 /**
  * Checks whether the input integer or string belongs to
- * `HttpInformationStatus` or `HttpInformationReasonPhrases` enum.
+ * `HttpInformationStatusCodes` or `HttpInformationReasonPhrases` enum.
  * For integer input, the range is all standard code between [100 - 199].
  * For string input, the match is case sensitive.
  *
