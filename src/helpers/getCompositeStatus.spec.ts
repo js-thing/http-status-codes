@@ -1,0 +1,17 @@
+import getCompositeStatus from './getCompositeStatus';
+import { expect } from 'chai';
+import HttpStatusCodes from '../HttpStatusCodes';
+import HttpStatusReasonPhrases from '../HttpStatusCodeReasonPhrases';
+
+describe('helper functions', () => {
+    describe('# getReasonPhrase(statusCode)', () => {
+        it('should return the corresponding reason phrase for the input', () => {
+            expect(getCompositeStatus(HttpStatusCodes.Ok)).to.equal(
+                `${HttpStatusCodes.Ok} ${HttpStatusReasonPhrases.Ok}`
+            );
+        });
+        it('should return the undefined for codes that does not exist', () => {
+            expect(getCompositeStatus(579)).to.equal(undefined);
+        });
+    });
+});
