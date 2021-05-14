@@ -1,6 +1,6 @@
 import isSuccessStatus, {
     isSuccessStatusCode,
-    isSuccessStatusPhrase,
+    isSuccessReasonPhrase,
     is2xxSuccessStatusCode,
 } from './isSuccessStatus';
 import { HttpSuccessStatus, HttpServerErrorStatus } from '../HttpStatusCodes';
@@ -29,23 +29,23 @@ describe('helper functions', () => {
         });
     });
 
-    describe('# isSuccessStatusPhrase(statusPhrase)', () => {
+    describe('# isSuccessReasonPhrase(statusPhrase)', () => {
         it('should return `true` if the argument is defined in HttpSuccessReasonPhrases', () => {
-            expect(isSuccessStatusPhrase(HttpSuccessReasonPhrases.Ok)).to.be
+            expect(isSuccessReasonPhrase(HttpSuccessReasonPhrases.Ok)).to.be
                 .true;
         });
         it('should return `true` if the argument is a valid reason phrase string', () => {
-            expect(isSuccessStatusPhrase('No Content')).to.be.true;
+            expect(isSuccessReasonPhrase('No Content')).to.be.true;
         });
         it('should return `false` if the argument is not defined in HttpSuccessReasonPhrases', () => {
             expect(
-                isSuccessStatusPhrase(
+                isSuccessReasonPhrase(
                     HttpServerErrorReasonPhrases.InternalServerError
                 )
             ).to.be.false;
         });
         it('should return `false` if the argument is not a valid reason phrase string', () => {
-            expect(isSuccessStatusPhrase('Internal Server Error')).to.be.false;
+            expect(isSuccessReasonPhrase('Internal Server Error')).to.be.false;
         });
     });
 

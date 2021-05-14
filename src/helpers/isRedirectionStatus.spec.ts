@@ -1,6 +1,6 @@
 import isRedirectionStatus, {
     isRedirectionStatusCode,
-    isRedirectionStatusPhrase,
+    isRedirectionReasonPhrase,
     is3xxRedirectionStatusCode,
 } from './isRedirectionStatus';
 import {
@@ -36,26 +36,26 @@ describe('redirection helper functions', () => {
         });
     });
 
-    describe('# isRedirectionStatusPhrase(statusPhrase)', () => {
+    describe('# isRedirectionReasonPhrase(statusPhrase)', () => {
         it('should return `true` if the argument is defined in HttpRedirectionReasonPhrases', () => {
             expect(
-                isRedirectionStatusPhrase(
+                isRedirectionReasonPhrase(
                     HttpRedirectionReasonPhrases.PermanentRedirect
                 )
             ).to.be.true;
         });
         it('should return `true` if the argument is a valid reason phrase string', () => {
-            expect(isRedirectionStatusPhrase('Moved Permanently')).to.be.true;
+            expect(isRedirectionReasonPhrase('Moved Permanently')).to.be.true;
         });
         it('should return `false` if the argument is not defined in HttpRedirectionReasonPhrases', () => {
             expect(
-                isRedirectionStatusPhrase(
+                isRedirectionReasonPhrase(
                     HttpServerErrorReasonPhrases.InternalServerError
                 )
             ).to.be.false;
         });
         it('should return `false` if the argument is not a valid reason phrase string', () => {
-            expect(isRedirectionStatusPhrase('Internal Server Error')).to.be
+            expect(isRedirectionReasonPhrase('Internal Server Error')).to.be
                 .false;
         });
     });
