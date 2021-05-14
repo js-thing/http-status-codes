@@ -1,6 +1,6 @@
 import isInformationStatus, {
     isInformationStatusCode,
-    isInformationStatusPhrase,
+    isInformationReasonPhrase,
     is1xxInformationStatusCode,
 } from './isInformationStatus';
 import {
@@ -35,24 +35,24 @@ describe('helper functions', () => {
         });
     });
 
-    describe('# isInformationStatusPhrase(statusPhrase)', () => {
+    describe('# isInformationReasonPhrase(statusPhrase)', () => {
         it('should return `true` if the argument is defined in HttpInformationReasonPhrases', () => {
             expect(
-                isInformationStatusPhrase(HttpInformationReasonPhrases.Continue)
+                isInformationReasonPhrase(HttpInformationReasonPhrases.Continue)
             ).to.be.true;
         });
         it('should return `true` if the argument is a valid reason phrase string', () => {
-            expect(isInformationStatusPhrase('Early Hints')).to.be.true;
+            expect(isInformationReasonPhrase('Early Hints')).to.be.true;
         });
         it('should return `false` if the argument is not defined in HttpInformationReasonPhrases', () => {
             expect(
-                isInformationStatusPhrase(
+                isInformationReasonPhrase(
                     HttpServerErrorReasonPhrases.InternalServerError
                 )
             ).to.be.false;
         });
         it('should return `false` if the argument is not a valid reason phrase string', () => {
-            expect(isInformationStatusPhrase('Internal Server Error')).to.be
+            expect(isInformationReasonPhrase('Internal Server Error')).to.be
                 .false;
         });
     });

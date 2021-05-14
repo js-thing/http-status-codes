@@ -29,7 +29,7 @@ export const is3xxRedirectionStatusCode = (statusCode: number) =>
  * @param reasonPhrase - The reason phrase. e.g. 'Ok'
  * @returns `true` if matches `false` otherwise
  */
-export const isRedirectionStatusPhrase = (reasonPhrase: string) =>
+export const isRedirectionReasonPhrase = (reasonPhrase: string) =>
     (<any>Object)
         .values(HttpRedirectionReasonPhrases)
         .includes(reasonPhrase) === true;
@@ -46,6 +46,6 @@ export const isRedirectionStatusPhrase = (reasonPhrase: string) =>
  */
 export const isRedirectionStatus = (status: string | number) =>
     isRedirectionStatusCode(status as number) ||
-    isRedirectionStatusPhrase(status as string);
+    isRedirectionReasonPhrase(status as string);
 
 export default isRedirectionStatus;
