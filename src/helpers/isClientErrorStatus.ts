@@ -1,8 +1,8 @@
-import { HttpClientErrorStatus } from '../HttpStatusCodes';
+import { HttpClientErrorStatusCodes } from '../HttpStatusCodes';
 import { HttpClientErrorReasonPhrases } from '../HttpReasonPhrases';
 
 /**
- * Checks whether the status code belongs to `HttpClientErrorStatus` enum.
+ * Checks whether the status code belongs to `HttpClientErrorStatusCodes` enum.
  * The range is all standard code between [400 - 499]
  *
  * To check the entire 4xx range use `is4xxClientErrorStatusCode(code: number)` instead.
@@ -10,7 +10,7 @@ import { HttpClientErrorReasonPhrases } from '../HttpReasonPhrases';
  * @returns `true` if matches `false` otherwise
  */
 export const isClientErrorStatusCode = (statusCode: number) =>
-    HttpClientErrorStatus[statusCode] !== undefined;
+    HttpClientErrorStatusCodes[statusCode] !== undefined;
 
 /**
  * Checks whether the status code belongs to 4xx family of status codes.
@@ -36,7 +36,7 @@ export const isClientErrorReasonPhrase = (reasonPhrase: string) =>
 
 /**
  * Checks whether the input integer or string belongs to
- * `HttpClientErrorStatus` or `HttpClientErrorReasonPhrases` enum.
+ * `HttpClientErrorStatusCodes` or `HttpClientErrorReasonPhrases` enum.
  * For integer input, the range is all standard code between [400 - 499].
  * For string input, the match is case sensitive.
  *

@@ -1,8 +1,8 @@
-import { HttpServerErrorStatus } from '../HttpStatusCodes';
+import { HttpServerErrorStatusCodes } from '../HttpStatusCodes';
 import { HttpServerErrorReasonPhrases } from '../HttpReasonPhrases';
 
 /**
- * Checks whether the status code belongs to `HttpServerErrorStatus` enum.
+ * Checks whether the status code belongs to `HttpServerErrorStatusCodes` enum.
  * The range is all standard code between [500 - 599]
  *
  * To check the entire 5xx range use `is5xxServerErrorStatusCode(code: number)` instead.
@@ -10,7 +10,7 @@ import { HttpServerErrorReasonPhrases } from '../HttpReasonPhrases';
  * @returns `true` if matches `false` otherwise
  */
 export const isServerErrorStatusCode = (statusCode: number) =>
-    HttpServerErrorStatus[statusCode] !== undefined;
+    HttpServerErrorStatusCodes[statusCode] !== undefined;
 
 /**
  * Checks whether the status code belongs to 5xx family of status codes.
@@ -36,7 +36,7 @@ export const isServerErrorReasonPhrase = (reasonPhrase: string) =>
 
 /**
  * Checks whether the input integer or string belongs to
- * `HttpServerErrorStatus` or `HttpServerErrorReasonPhrases` enum.
+ * `HttpServerErrorStatusCodes` or `HttpServerErrorReasonPhrases` enum.
  * For integer input, the range is all standard code between [500 - 599].
  * For string input, the match is case sensitive.
  *

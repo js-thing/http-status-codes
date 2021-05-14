@@ -1,7 +1,7 @@
-import HttpStatusCodes, { HttpSuccessStatus } from '../lib';
+import HttpStatusCodes, { HttpSuccessStatusCodes } from '../lib';
 
 const okStatusCode = HttpStatusCodes.Ok;
 console.log(`"${okStatusCode}" - should equals 200`);
 
-let anotherOkStatusCode: HttpStatusCodes = HttpSuccessStatus.Ok;
+let anotherOkStatusCode: HttpStatusCodes = HttpSuccessStatusCodes.Ok;
 console.log(`"${anotherOkStatusCode}" - should equals 200`);

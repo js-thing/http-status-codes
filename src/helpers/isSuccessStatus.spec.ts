@@ -3,7 +3,7 @@ import isSuccessStatus, {
     isSuccessReasonPhrase,
     is2xxSuccessStatusCode,
 } from './isSuccessStatus';
-import { HttpSuccessStatus, HttpServerErrorStatus } from '../HttpStatusCodes';
+import { HttpSuccessStatusCodes, HttpServerErrorStatusCodes } from '../HttpStatusCodes';
 import {
     HttpSuccessReasonPhrases,
     HttpServerErrorReasonPhrases,
@@ -13,15 +13,15 @@ import { expect } from 'chai';
 
 describe('helper functions', () => {
     describe('# isSuccessStatusCode(statusCode)', () => {
-        it('should return `true` if the argument is defined in HttpSuccessStatus', () => {
-            expect(isSuccessStatusCode(HttpSuccessStatus.Ok)).to.be.true;
+        it('should return `true` if the argument is defined in HttpSuccessStatusCodes', () => {
+            expect(isSuccessStatusCode(HttpSuccessStatusCodes.Ok)).to.be.true;
         });
         it('should return `true` if the argument is a valid defined code between [200 - 299]', () => {
             expect(isSuccessStatusCode(201)).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpSuccessStatus', () => {
+        it('should return `false` if the argument is not defined in HttpSuccessStatusCodes', () => {
             expect(
-                isSuccessStatusCode(HttpServerErrorStatus.InternalServerError)
+                isSuccessStatusCode(HttpServerErrorStatusCodes.InternalServerError)
             ).to.be.false;
         });
         it('should return `false` if the argument is not a valid defined code between [200 - 299]', () => {
@@ -50,14 +50,14 @@ describe('helper functions', () => {
     });
 
     describe('# isSuccessStatus(status)', () => {
-        it('should return `true` if the argument is defined in HttpSuccessStatus', () => {
-            expect(isSuccessStatus(HttpSuccessStatus.Ok)).to.be.true;
+        it('should return `true` if the argument is defined in HttpSuccessStatusCodes', () => {
+            expect(isSuccessStatus(HttpSuccessStatusCodes.Ok)).to.be.true;
         });
         it('should return `true` if the argument is a valid defined code between [200 - 299]', () => {
             expect(isSuccessStatus(201)).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpSuccessStatus', () => {
-            expect(isSuccessStatus(HttpServerErrorStatus.InternalServerError))
+        it('should return `false` if the argument is not defined in HttpSuccessStatusCodes', () => {
+            expect(isSuccessStatus(HttpServerErrorStatusCodes.InternalServerError))
                 .to.be.false;
         });
         it('should return `false` if the argument is not a valid defined code between [200 - 299]', () => {
