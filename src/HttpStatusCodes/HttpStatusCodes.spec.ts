@@ -1,33 +1,33 @@
 import { HttpStatusCodes } from './HttpStatusCodes';
-import HttpInformationStatus from './HttpInformationStatus';
-import HttpSuccessStatus from './HttpSuccessStatus';
-import HttpRedirectionStatus from './HttpRedirectionStatus';
-import HttpClientErrorStatus from './HttpClientErrorStatus';
-import HttpServerErrorStatus from './HttpServerErrorStatus';
+import HttpInformationStatusCodes from './HttpInformationStatusCodes';
+import HttpSuccessStatusCodes from './HttpSuccessStatusCodes';
+import HttpRedirectionStatusCodes from './HttpRedirectionStatusCodes';
+import HttpClientErrorStatusCodes from './HttpClientErrorStatusCodes';
+import HttpServerErrorStatusCodes from './HttpServerErrorStatusCodes';
 import { expect } from 'chai';
 
 describe('HttpStatusCodes', () => {
     describe('#Check if merged enum codes are equal', () => {
         it('Continue from HttpInformationStatus should be equal', () => {
-            expect(HttpInformationStatus.Continue).to.equal(
+            expect(HttpInformationStatusCodes.Continue).to.equal(
                 HttpStatusCodes.Continue
             );
         });
         it('OK from HttpSuccessStatus should be equal (one from each file)', () => {
-            expect(HttpSuccessStatus.Ok).to.equal(HttpStatusCodes.Ok);
+            expect(HttpSuccessStatusCodes.Ok).to.equal(HttpStatusCodes.Ok);
         });
         it('MovedPermanently from HttpRedirectionStatus should be equal', () => {
-            expect(HttpRedirectionStatus.MovedPermanently).to.equal(
+            expect(HttpRedirectionStatusCodes.MovedPermanently).to.equal(
                 HttpStatusCodes.MovedPermanently
             );
         });
         it('BadRequest from HttpClientErrorStatus should be equal', () => {
-            expect(HttpClientErrorStatus.BadRequest).to.equal(
+            expect(HttpClientErrorStatusCodes.BadRequest).to.equal(
                 HttpStatusCodes.BadRequest
             );
         });
         it('InternalServerError from HttpServerErrorStatus should be equal', () => {
-            expect(HttpServerErrorStatus.InternalServerError).to.equal(
+            expect(HttpServerErrorStatusCodes.InternalServerError).to.equal(
                 HttpStatusCodes.InternalServerError
             );
         });
@@ -36,26 +36,26 @@ describe('HttpStatusCodes', () => {
     describe('#Check if enum instances are assignable', () => {
         it('Continue from HttpInformationStatus should be assigned', () => {
             const anyStatusCode: HttpStatusCodes =
-                HttpInformationStatus.Continue;
+                HttpInformationStatusCodes.Continue;
             expect(anyStatusCode).to.equal(HttpStatusCodes.Continue);
         });
         it('OK from HttpSuccessStatus should be assigned', () => {
-            const anyStatusCode: HttpStatusCodes = HttpSuccessStatus.Ok;
+            const anyStatusCode: HttpStatusCodes = HttpSuccessStatusCodes.Ok;
             expect(anyStatusCode).to.equal(HttpStatusCodes.Ok);
         });
         it('MovedPermanently from HttpRedirectionStatus should be assigned', () => {
             const anyStatusCode: HttpStatusCodes =
-                HttpRedirectionStatus.MovedPermanently;
+                HttpRedirectionStatusCodes.MovedPermanently;
             expect(anyStatusCode).to.equal(HttpStatusCodes.MovedPermanently);
         });
         it('BadRequest from HttpClientErrorStatus should be assigned', () => {
             const anyStatusCode: HttpStatusCodes =
-                HttpClientErrorStatus.BadRequest;
+                HttpClientErrorStatusCodes.BadRequest;
             expect(anyStatusCode).to.equal(HttpStatusCodes.BadRequest);
         });
         it('InternalServerError from HttpServerErrorStatus should be assigned', () => {
             const anyStatusCode: HttpStatusCodes =
-                HttpServerErrorStatus.InternalServerError;
+                HttpServerErrorStatusCodes.InternalServerError;
             expect(anyStatusCode).to.equal(HttpStatusCodes.InternalServerError);
         });
     });

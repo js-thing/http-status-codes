@@ -8,9 +8,9 @@ import {
     HttpServerErrorStatus,
 } from '../HttpStatusCodes';
 import {
-    HttpInformationStatusReasonPhrases,
-    HttpServerErrorStatusReasonPhrase,
-} from '../HttpStatusCodeReasonPhrases';
+    HttpInformationReasonPhrases,
+    HttpServerErrorReasonPhrases,
+} from '../HttpReasonPhrases';
 
 import { expect } from 'chai';
 
@@ -36,20 +36,18 @@ describe('helper functions', () => {
     });
 
     describe('# isInformationStatusPhrase(statusPhrase)', () => {
-        it('should return `true` if the argument is defined in HttpInformationStatusReasonPhrases', () => {
+        it('should return `true` if the argument is defined in HttpInformationReasonPhrases', () => {
             expect(
-                isInformationStatusPhrase(
-                    HttpInformationStatusReasonPhrases.Continue
-                )
+                isInformationStatusPhrase(HttpInformationReasonPhrases.Continue)
             ).to.be.true;
         });
         it('should return `true` if the argument is a valid reason phrase string', () => {
             expect(isInformationStatusPhrase('Early Hints')).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpInformationStatusReasonPhrases', () => {
+        it('should return `false` if the argument is not defined in HttpInformationReasonPhrases', () => {
             expect(
                 isInformationStatusPhrase(
-                    HttpServerErrorStatusReasonPhrase.InternalServerError
+                    HttpServerErrorReasonPhrases.InternalServerError
                 )
             ).to.be.false;
         });
@@ -76,18 +74,17 @@ describe('helper functions', () => {
             expect(isInformationStatus(404)).to.be.false;
         });
 
-        it('should return `true` if the argument is defined in HttpInformationStatusReasonPhrases', () => {
-            expect(
-                isInformationStatus(HttpInformationStatusReasonPhrases.Continue)
-            ).to.be.true;
+        it('should return `true` if the argument is defined in HttpInformationReasonPhrases', () => {
+            expect(isInformationStatus(HttpInformationReasonPhrases.Continue))
+                .to.be.true;
         });
         it('should return `true` if the argument is a valid reason phrase string', () => {
             expect(isInformationStatus('Early Hints')).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpInformationStatusReasonPhrases', () => {
+        it('should return `false` if the argument is not defined in HttpInformationReasonPhrases', () => {
             expect(
                 isInformationStatus(
-                    HttpServerErrorStatusReasonPhrase.InternalServerError
+                    HttpServerErrorReasonPhrases.InternalServerError
                 )
             ).to.be.false;
         });

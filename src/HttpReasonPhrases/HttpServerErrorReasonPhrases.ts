@@ -4,7 +4,7 @@
  * @readonly
  * @enum {string}
  */
-enum HttpServerErrorStatusReasonPhrase {
+enum HttpServerErrorReasonPhrases {
     /**
      * ### 500 Internal Server Error
      *
@@ -144,4 +144,4 @@ enum HttpServerErrorStatusReasonPhrase {
     NetworkAuthenticationRequired = 'Network Authentication Required',
 }
 
-export default HttpServerErrorStatusReasonPhrase;
+export default HttpServerErrorReasonPhrases;

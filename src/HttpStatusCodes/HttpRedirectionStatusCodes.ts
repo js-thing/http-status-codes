@@ -6,7 +6,7 @@
  * @readonly
  * @enum {number}
  */
-enum HttpRedirectionStatus {
+enum HttpRedirectionStatusCodes {
     /**
      * ### 300 Multiple Choice
      *
@@ -126,4 +126,4 @@ enum HttpRedirectionStatus {
     PermanentRedirect = 308,
 }
 
-export default HttpRedirectionStatus;
+export default HttpRedirectionStatusCodes;

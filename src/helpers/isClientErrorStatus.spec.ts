@@ -8,9 +8,9 @@ import {
     HttpServerErrorStatus,
 } from '../HttpStatusCodes';
 import {
-    HttpClientErrorStatusReasonPhrases,
-    HttpServerErrorStatusReasonPhrase,
-} from '../HttpStatusCodeReasonPhrases';
+    HttpClientErrorReasonPhrases,
+    HttpServerErrorReasonPhrases,
+} from '../HttpReasonPhrases';
 
 import { expect } from 'chai';
 
@@ -36,20 +36,20 @@ describe('helper functions', () => {
     });
 
     describe('# isClientErrorStatusPhrase(statusPhrase)', () => {
-        it('should return `true` if the argument is defined in HttpClientErrorStatusReasonPhrases', () => {
+        it('should return `true` if the argument is defined in HttpClientErrorReasonPhrases', () => {
             expect(
                 isClientErrorStatusPhrase(
-                    HttpClientErrorStatusReasonPhrases.BadRequest
+                    HttpClientErrorReasonPhrases.BadRequest
                 )
             ).to.be.true;
         });
         it('should return `true` if the argument is a valid reason phrase string', () => {
             expect(isClientErrorStatusPhrase('Forbidden')).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpClientErrorStatusReasonPhrases', () => {
+        it('should return `false` if the argument is not defined in HttpClientErrorReasonPhrases', () => {
             expect(
                 isClientErrorStatusPhrase(
-                    HttpServerErrorStatusReasonPhrase.InternalServerError
+                    HttpServerErrorReasonPhrases.InternalServerError
                 )
             ).to.be.false;
         });
@@ -76,20 +76,17 @@ describe('helper functions', () => {
             expect(isClientErrorStatus(100)).to.be.false;
         });
 
-        it('should return `true` if the argument is defined in HttpClientErrorStatusReasonPhrases', () => {
-            expect(
-                isClientErrorStatus(
-                    HttpClientErrorStatusReasonPhrases.BadRequest
-                )
-            ).to.be.true;
+        it('should return `true` if the argument is defined in HttpClientErrorReasonPhrases', () => {
+            expect(isClientErrorStatus(HttpClientErrorReasonPhrases.BadRequest))
+                .to.be.true;
         });
         it('should return `true` if the argument is a valid reason phrase string', () => {
             expect(isClientErrorStatus('Forbidden')).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpClientErrorStatusReasonPhrases', () => {
+        it('should return `false` if the argument is not defined in HttpClientErrorReasonPhrases', () => {
             expect(
                 isClientErrorStatus(
-                    HttpServerErrorStatusReasonPhrase.InternalServerError
+                    HttpServerErrorReasonPhrases.InternalServerError
                 )
             ).to.be.false;
         });
