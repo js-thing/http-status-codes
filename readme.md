@@ -34,7 +34,7 @@ An example of VS Code IntelliSense showing the Unauthorized enum member.
 
 Install from npm
 ```sh
-npm install TBD
+npm install http-status-codes-rfc
 ```
 ---
 
@@ -48,7 +48,7 @@ import HttpStatusCodes, {
     HttpRedirectionStatusCodes,
     HttpClientErrorStatusCodes,     
     HttpServerErrorStatusCodes,
-} from 'TBD';
+} from 'http-status-codes-rfc';
 ```
 
 Or
@@ -60,12 +60,12 @@ const {
     HttpClientErrorStatusCodes, 
     HttpServerErrorStatusCodes,
     HttpStatusCodes,
-} = require('TBD');
+} = require('http-status-codes-rfc');
 ```
 
 Import default using require
 ```javascript
-const HttpStatusCodes = require('TBD').default;
+const HttpStatusCodes = require('http-status-codes-rfc').default;
 ```
 ---
 
