@@ -1,6 +1,6 @@
 {
   "name": "http-status-codes-rfc",
-  "version": "1.0.1-aplha",
+  "version": "1.0.1-aplha.0",
   "description": "Http status codes constants",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
