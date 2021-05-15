@@ -4,9 +4,11 @@
 
 ## Http Status Codes
 
-This library is a complete collection of all `Http Status Codes` and `Reason Phrases` along with `helper functions` with _no dependencies_ and is _100% compatible_ to use with `Typescript` or `Javascript`
+This library is a complete collection of all `Http Status Codes` and `Reason Phrases` along with `helper functions` with _no dependencies_ and is _open source_ written in typescript.
 
-### Covers
+Use with `Typescript` or `Javascript` in both _server_ or _client_ side.
+
+### Covers status codes defined in
 - Hypertext Transfer Protocol (HTTP/1.0) defined in 
 [RFC 1945](https://datatracker.ietf.org/doc/html/rfc1945)
 - Hypertext Transfer Protocol (HTTP/1.1) defined in 
@@ -18,13 +20,13 @@ This library is a complete collection of all `Http Status Codes` and `Reason Phr
 
 ### Documentation
 
-Each and every member of the enums are properly documented so that users get instant knowledge of the status code along with links to original sources.
+Each and every member/property/function of the library are properly documented to get comprehensive inforation along with supporting links to original sources.
 
-#### An example of VS Code IntelliSense
+An example of VS Code IntelliSense showing the Unauthorized enum member.
 
 ![image](VS_Code_IntelliSense.png)
 
-The complete documentation of this project can be found in this [link](https://js-thing.github.io/http-status-codes/)
+#### The complete documentation of this project can be found in this [link](https://js-thing.github.io/http-status-codes/)
 
 ---
 
@@ -69,7 +71,7 @@ const HttpStatusCodes = require('TBD').default;
 
 ### Usage
 
-The `HttpStatusCodes` is a combined enum of `HttpInformationStatusCodes`, `HttpSuccessStatusCodes`, `HttpRedirectionStatusCodes`, `HttpClientErrorStatusCodes` and `HttpServerErrorStatusCodes`,
+The `HttpStatusCodes` enum is the super set of `HttpInformationStatusCodes`, `HttpSuccessStatusCodes`, `HttpRedirectionStatusCodes`, `HttpClientErrorStatusCodes` and `HttpServerErrorStatusCodes` enums,
 
 ```javascript
 // use the combined enum to access any status code
