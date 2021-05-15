@@ -1,6 +1,6 @@
 {
-  "name": "http-status-codes",
-  "version": "1.0.0",
+  "name": "http-status-codes-rfc",
+  "version": "1.0.1-aplha",
   "description": "Http status codes constants",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -20,6 +20,22 @@
     "type": "git",
     "url": "https://github.com/js-thing/http-status-codes.git"
   },
+  "bugs": {
+    "url": "https://github.com/js-thing/http-status-codes-rfc/issues"
+  },
+  "homepage": "https://js-thing.com/",
+  "keywords": [
+    "http",
+    "status",
+    "codes",
+    "rfc",
+    "webdav",
+    "reason",
+    "phrase",
+    "ts",
+    "typescript",
+    "node"
+  ],
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.18",
