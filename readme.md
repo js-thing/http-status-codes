@@ -1,4 +1,6 @@
+[![npm version](https://badge.fury.io/js/http-status-codes.svg)](https://badge.fury.io/js/@js-thing/http-status-codes)
 [![GitHub version](https://badge.fury.io/gh/js-thing%2Fhttp-status-codes.svg)](https://badge.fury.io/gh/js-thing%2Fhttp-status-codes)
+![npm](https://img.shields.io/npm/dt/@js-thing/http-status-codes)
 ![Build status](https://github.com/js-thing/http-status-codes/actions/workflows/node.js.yml/badge.svg)
 [![codecov](https://codecov.io/gh/js-thing/http-status-codes/branch/main/graph/badge.svg?token=lSpAkoUYjc)](https://codecov.io/gh/js-thing/http-status-codes)
 
@@ -34,7 +36,7 @@ An example of VS Code IntelliSense showing the Unauthorized enum member.
 
 Install from npm
 ```sh
-npm install http-status-codes-rfc
+npm install @js-thing/http-status-codes
 ```
 ---
 
@@ -48,7 +50,7 @@ import HttpStatusCodes, {
     HttpRedirectionStatusCodes,
     HttpClientErrorStatusCodes,     
     HttpServerErrorStatusCodes,
-} from 'http-status-codes-rfc';
+} from '@js-thing/http-status-codes';
 ```
 
 Or
@@ -60,12 +62,12 @@ const {
     HttpClientErrorStatusCodes, 
     HttpServerErrorStatusCodes,
     HttpStatusCodes,
-} = require('http-status-codes-rfc');
+} = require('@js-thing/http-status-codes');
 ```
 
 Import default using require
 ```javascript
-const HttpStatusCodes = require('http-status-codes-rfc').default;
+const HttpStatusCodes = require('@js-thing/http-status-codes').default;
 ```
 ---
 

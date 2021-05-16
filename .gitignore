@@ -4,3 +4,5 @@ lib
 .nyc_output
 coverage
 docs
+*.gz
+*.tgz
