@@ -1,6 +1,6 @@
 {
   "name": "@js-thing/http-status-codes",
-  "version": "1.0.1-aplha.4",
+  "version": "1.0.1-alpha.4",
   "description": "Contains properly documented HTTP status code enums, reason phrases and helpers as defined in RFC",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
