@@ -1,6 +1,6 @@
 {
   "name": "@js-thing/http-status-codes",
-  "version": "1.0.1-aplha.1",
+  "version": "1.0.1-aplha.2",
   "description": "Http status codes constants",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
