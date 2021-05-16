@@ -28,7 +28,7 @@ An example of VS Code IntelliSense showing the Unauthorized enum member.
 
 ![image](https://github.com/js-thing/http-status-codes/raw/main/VS_Code_IntelliSense.png)
 
-#### The complete documentation of this project can be found in this [link](https://js-thing.com/)
+#### The complete documentation of this project can be found in this [link](https://http-status-codes.js-thing.com)
 
 ---
 
