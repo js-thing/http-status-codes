@@ -18,6 +18,9 @@ Use with `Typescript` or `Javascript` in both _server_ or _client_ side.
 - Web-based Distributed Authoring and Versioning (WebDAV) defined in 
 [RFC 2518](https://datatracker.ietf.org/doc/html/rfc2518)
 
+
+View project on [GitHub](https://github.com/js-thing/http-status-codes)
+
 ---
 
 ### Documentation
@@ -28,13 +31,13 @@ An example of VS Code IntelliSense showing the Unauthorized enum member.
 
 ![image](https://github.com/js-thing/http-status-codes/raw/main/VS_Code_IntelliSense.png)
 
-#### The complete documentation of this project can be found in this [link](https://http-status-codes.js-thing.com)
+The complete documentation of this project can be found in this [link](https://http-status-codes.js-thing.com).
 
 ---
 
 ### Installation
 
-Install from npm
+Install from [npm](https://www.npmjs.com/package/@js-thing/http-status-codes)
 ```sh
 npm install @js-thing/http-status-codes
 ```
