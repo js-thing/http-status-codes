@@ -1,0 +1,51 @@
+{
+    "root": true,
+    "plugins": ["@typescript-eslint", "mocha", "chai-expect"],
+    "extends": [
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:eslint-comments/recommended",
+        "plugin:mocha/recommended",
+        "plugin:prettier/recommended",
+        "plugin:chai-expect/recommended"
+    ],
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "env": {
+        "node": true,
+        "browser": true,
+        "mocha": true
+    },
+    "rules": {
+        // Allow most functions to rely on type inference. If the function is exported, then `@typescript-eslint/explicit-module-boundary-types` will ensure it's typed.
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-use-before-define": [
+            "error",
+            {
+                "functions": false,
+                "classes": true,
+                "variables": true,
+                "typedefs": true
+            }
+        ],
+        "@typescript-eslint/restrict-template-expressions": [
+            "error",
+            {
+                "allowNumber": true,
+                "allowNullish": true
+            }
+        ]
+    },
+    "overrides": [
+        {
+            "files": ["*.test.ts", "*.spec.ts"],
+            "rules": {
+                "@typescript-eslint/no-unused-expressions": "off",
+                "func-names": "off",
+                "prefer-arrow-callback": "off"
+            }
+        }
+    ]
+}
