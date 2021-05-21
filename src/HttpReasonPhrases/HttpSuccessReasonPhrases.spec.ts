@@ -1,68 +1,64 @@
-import HttpSuccessReasonPhrases from './HttpSuccessReasonPhrases';
 import { expect } from 'chai';
+import HttpSuccessReasonPhrases from './HttpSuccessReasonPhrases';
 
-describe('HttpSuccessReasonPhrases', () => {
-    describe('#Ok', () => {
-        it('status code should be equal to OK', () => {
+describe('HttpSuccessReasonPhrases', function () {
+    describe('#Ok', function () {
+        it('status code should be equal to OK', function () {
             expect(HttpSuccessReasonPhrases.Ok).to.equal('OK');
         });
     });
-    describe('#Created', () => {
-        it('status code should be equal to Created', () => {
+    describe('#Created', function () {
+        it('status code should be equal to Created', function () {
             expect(HttpSuccessReasonPhrases.Created).to.equal('Created');
         });
     });
-    describe('#Accepted', () => {
-        it('status code should be equal to Accepted', () => {
-            expect(HttpSuccessReasonPhrases.Accepted).to.equal(
-                'Accepted'
-            );
+    describe('#Accepted', function () {
+        it('status code should be equal to Accepted', function () {
+            expect(HttpSuccessReasonPhrases.Accepted).to.equal('Accepted');
         });
     });
-    describe('#NonAuthoritativeInformation', () => {
-        it('status code should be equal to Non-Authoritative Information', () => {
+    describe('#NonAuthoritativeInformation', function () {
+        it('status code should be equal to Non-Authoritative Information', function () {
             expect(
                 HttpSuccessReasonPhrases.NonAuthoritativeInformation
             ).to.equal('Non-Authoritative Information');
         });
     });
-    describe('#NoContent', () => {
-        it('status code should be equal to No Content', () => {
-            expect(HttpSuccessReasonPhrases.NoContent).to.equal(
-                'No Content'
-            );
+    describe('#NoContent', function () {
+        it('status code should be equal to No Content', function () {
+            expect(HttpSuccessReasonPhrases.NoContent).to.equal('No Content');
         });
     });
-    describe('#ResetContent', () => {
-        it('status code should be equal to Reset Content', () => {
+    describe('#ResetContent', function () {
+        it('status code should be equal to Reset Content', function () {
             expect(HttpSuccessReasonPhrases.ResetContent).to.equal(
                 'Reset Content'
             );
         });
     });
-    describe('#PartialContent', () => {
-        it('status code should be equal to Partial Content', () => {
+    describe('#PartialContent', function () {
+        it('status code should be equal to Partial Content', function () {
             expect(HttpSuccessReasonPhrases.PartialContent).to.equal(
                 'Partial Content'
             );
         });
     });
-    describe('#Multi', () => {
-        it('status code should be equal to Multi-Status', () => {
+    describe('#Multi', function () {
+        it('status code should be equal to Multi-Status', function () {
             expect(HttpSuccessReasonPhrases.MultiStatus).to.equal(
                 'Multi-Status'
             );
         });
     });
-    describe('#AlreadyReported', () => {
-        it('status code should be equal to Already Reported', () => {
+    describe('#AlreadyReported', function () {
+        it('status code should be equal to Already Reported', function () {
             expect(HttpSuccessReasonPhrases.AlreadyReported).to.equal(
                 'Already Reported'
             );
         });
     });
-    describe('#IMUsed', () => {
-        it('status code should be equal to IM Used', () => {
+    describe('#IMUsed', function () {
+        it('status code should be equal to IM Used', function () {
             expect(HttpSuccessReasonPhrases.IMUsed).to.equal('IM Used');
         });
     });

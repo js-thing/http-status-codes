@@ -9,7 +9,7 @@ import { HttpRedirectionReasonPhrases } from '../HttpReasonPhrases';
  * @param statusCode - The integer status code. e.g. 100
  * @returns `true` if matches `false` otherwise
  */
-export const isRedirectionStatusCode = (statusCode: number) =>
+export const isRedirectionStatusCode = (statusCode: number): boolean =>
     HttpRedirectionStatusCodes[statusCode] !== undefined;
 
 /**
@@ -18,7 +18,7 @@ export const isRedirectionStatusCode = (statusCode: number) =>
  * @param statusCode - The integer status code. e.g. 100
  * @returns `true` if matches `false` otherwise
  */
-export const is3xxRedirectionStatusCode = (statusCode: number) =>
+export const is3xxRedirectionStatusCode = (statusCode: number): boolean =>
     statusCode >= 300 && statusCode <= 399;
 
 /**
@@ -29,10 +29,10 @@ export const is3xxRedirectionStatusCode = (statusCode: number) =>
  * @param reasonPhrase - The reason phrase. e.g. 'Ok'
  * @returns `true` if matches `false` otherwise
  */
-export const isRedirectionReasonPhrase = (reasonPhrase: string) =>
-    (<any>Object)
-        .values(HttpRedirectionReasonPhrases)
-        .includes(reasonPhrase) === true;
+export const isRedirectionReasonPhrase = (reasonPhrase: string): boolean =>
+    (Object.values(HttpRedirectionReasonPhrases) as string[]).includes(
+        reasonPhrase
+    ) === true;
 
 /**
  * Checks whether the input integer or string belongs to
@@ -44,7 +44,7 @@ export const isRedirectionReasonPhrase = (reasonPhrase: string) =>
  * @param status - e.g. 'Ok' or 200
  * @returns `true` if matches `false` otherwise
  */
-export const isRedirectionStatus = (status: string | number) =>
+export const isRedirectionStatus = (status: string | number): boolean =>
     isRedirectionStatusCode(status as number) ||
     isRedirectionReasonPhrase(status as string);
 

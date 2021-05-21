@@ -1,4 +1,4 @@
-import HttpStatusCodes from '../HttpStatusCodes';
+import { HttpStatusCodes } from '../HttpStatusCodes';
 import getReasonPhrase from './getReasonPhrase';
 
 /**
@@ -7,7 +7,7 @@ import getReasonPhrase from './getReasonPhrase';
  * @param statusCode - e.g. 200
  * @returns - `string` in `[StatusCode] [ReasonPhrase]` format
  */
-export default (statusCode: number) =>
+export default (statusCode: number): string | undefined =>
     HttpStatusCodes[statusCode]
         ? `${statusCode} ${getReasonPhrase(statusCode)}`
         : undefined;

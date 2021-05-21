@@ -15,18 +15,18 @@ import HttpServerErrorStatusCodes from './HttpServerErrorStatusCodes';
  * @readonly
  * @enum {number}
  */
-// tslint:disable-next-line:variable-name
 export const HttpStatusCodes = {
-  ...HttpInformationStatusCodes,
-  ...HttpSuccessStatusCodes,
-  ...HttpRedirectionStatusCodes,
-  ...HttpClientErrorStatusCodes,
-  ...HttpServerErrorStatusCodes,
+    ...HttpInformationStatusCodes,
+    ...HttpSuccessStatusCodes,
+    ...HttpRedirectionStatusCodes,
+    ...HttpClientErrorStatusCodes,
+    ...HttpServerErrorStatusCodes,
 };
 
 /**
  * The type for HttpStatusCodes
  */
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 export type HttpStatusCodes =
     | HttpInformationStatusCodes
     | HttpSuccessStatusCodes

@@ -1,30 +1,28 @@
-import HttpInformationReasonPhrases from './HttpInformationReasonPhrases';
 import { expect } from 'chai';
+import HttpInformationReasonPhrases from './HttpInformationReasonPhrases';
 
-describe('HttpInformationReasonPhrases', () => {
-    describe('#Continue', () => {
-        it('status code should be equal to Continue', () => {
-            expect(HttpInformationReasonPhrases.Continue).to.equal(
-                'Continue'
+describe('HttpInformationReasonPhrases', function () {
+    describe('#Continue', function () {
+        it('status code should be equal to Continue', function () {
+            expect(HttpInformationReasonPhrases.Continue).to.equal('Continue');
+        });
+    });
+    describe('#SwitchingProtocol', function () {
+        it('status code should be equal to Switching Protocol', function () {
+            expect(HttpInformationReasonPhrases.SwitchingProtocol).to.equal(
+                'Switching Protocol'
             );
         });
     });
-    describe('#SwitchingProtocol', () => {
-        it('status code should be equal to Switching Protocol', () => {
-            expect(
-                HttpInformationReasonPhrases.SwitchingProtocol
-            ).to.equal('Switching Protocol');
-        });
-    });
-    describe('#Processing', () => {
-        it('status code should be equal to Processing', () => {
+    describe('#Processing', function () {
+        it('status code should be equal to Processing', function () {
             expect(HttpInformationReasonPhrases.Processing).to.equal(
                 'Processing'
             );
         });
     });
-    describe('#EarlyHints', () => {
-        it('status code should be equal to Early Hints', () => {
+    describe('#EarlyHints', function () {
+        it('status code should be equal to Early Hints', function () {
             expect(HttpInformationReasonPhrases.EarlyHints).to.equal(
                 'Early Hints'
             );

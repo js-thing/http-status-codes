@@ -3,7 +3,8 @@ import HttpSuccessStatusCodes from './HttpSuccessStatusCodes';
 import HttpRedirectionStatusCodes from './HttpRedirectionStatusCodes';
 import HttpClientErrorStatusCodes from './HttpClientErrorStatusCodes';
 import HttpServerErrorStatusCodes from './HttpServerErrorStatusCodes';
-import { HttpStatusCodes } from './HttpStatusCodes';
+
+export * from './HttpStatusCodes';
 
 export {
     HttpInformationStatusCodes,
@@ -11,7 +12,4 @@ export {
     HttpRedirectionStatusCodes,
     HttpClientErrorStatusCodes,
     HttpServerErrorStatusCodes,
-    HttpStatusCodes,
 };
-
-export default HttpStatusCodes;

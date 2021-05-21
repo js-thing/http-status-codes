@@ -1,5 +1,5 @@
-import HttpStatusCodes from '../HttpStatusCodes';
-import HttpReasonPhrases from '../HttpReasonPhrases';
+import { HttpStatusCodes } from '../HttpStatusCodes';
+import { HttpReasonPhrases } from '../HttpReasonPhrases';
 
 /**
  * Get the reason phrase for a given status code
@@ -7,7 +7,7 @@ import HttpReasonPhrases from '../HttpReasonPhrases';
  * @param statusCode - e.g. 200
  * @returns - The corresponding reason phrase as `string` for the given input `undefined` otherwise
  */
-export default (statusCode: number) =>
+export default (statusCode: number): string | undefined =>
     (HttpReasonPhrases as { [key: string]: string })[
         HttpStatusCodes[statusCode]
-];
+    ];

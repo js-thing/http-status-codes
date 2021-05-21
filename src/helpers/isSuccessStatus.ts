@@ -9,7 +9,7 @@ import { HttpSuccessReasonPhrases } from '../HttpReasonPhrases';
  * @param statusCode - The integer status code. e.g. 100
  * @returns `true` if matches `false` otherwise
  */
-export const isSuccessStatusCode = (statusCode: number) =>
+export const isSuccessStatusCode = (statusCode: number): boolean =>
     HttpSuccessStatusCodes[statusCode] !== undefined;
 
 /**
@@ -18,7 +18,7 @@ export const isSuccessStatusCode = (statusCode: number) =>
  * @param statusCode - The integer status code. e.g. 100
  * @returns `true` if matches `false` otherwise
  */
-export const is2xxSuccessStatusCode = (statusCode: number) =>
+export const is2xxSuccessStatusCode = (statusCode: number): boolean =>
     statusCode >= 200 && statusCode <= 299;
 
 /**
@@ -29,9 +29,10 @@ export const is2xxSuccessStatusCode = (statusCode: number) =>
  * @param reasonPhrase - The reason phrase. e.g. 'Ok'
  * @returns `true` if matches `false` otherwise
  */
-export const isSuccessReasonPhrase = (reasonPhrase: string) =>
-    (<any>Object).values(HttpSuccessReasonPhrases).includes(reasonPhrase) ===
-    true;
+export const isSuccessReasonPhrase = (reasonPhrase: string): boolean =>
+    (Object.values(HttpSuccessReasonPhrases) as string[]).includes(
+        reasonPhrase
+    ) === true;
 
 /**
  * Checks whether the input integer or string belongs to
@@ -43,7 +44,7 @@ export const isSuccessReasonPhrase = (reasonPhrase: string) =>
  * @param status - e.g. 'Ok' or 200
  * @returns `true` if matches `false` otherwise
  */
-export const isSuccessStatus = (status: string | number) =>
+export const isSuccessStatus = (status: string | number): boolean =>
     isSuccessStatusCode(status as number) ||
     isSuccessReasonPhrase(status as string);
 
