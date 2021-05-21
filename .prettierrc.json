@@ -13,5 +13,28 @@
   "tabWidth": 4,
   "trailingComma": "es5",
   "useTabs": false,
-  "parser": "typescript"
+  "parser": "typescript",
+  "overrides": [
+    {
+      "files": "LICENSE",
+      "options": {
+        "parser": "markdown"
+      }
+    },
+    {
+      "files": "*.json",
+      "options": {
+        "parser": "json"
+      }
+    },
+    {
+      "files": [
+        "*.yml",
+        "*.yaml"
+      ],
+      "options": {
+        "parser": "yaml"
+      }
+    }
+  ]
 }
