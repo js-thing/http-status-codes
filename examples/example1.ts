@@ -1,4 +1,4 @@
-import HttpStatusCodes, { HttpSuccessStatusCodes } from '../lib';
+import { HttpStatusCodes, HttpSuccessStatusCodes } from '../src';
 
 const okStatusCode = HttpStatusCodes.Ok;
 console.log(`"${okStatusCode}" - should equals 200`);

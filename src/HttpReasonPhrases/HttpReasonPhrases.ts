@@ -15,18 +15,18 @@ import HttpServerErrorReasonPhrases from './HttpServerErrorReasonPhrases';
  * @readonly
  * @enum {string}
  */
-// tslint:disable-next-line:variable-name
 export const HttpReasonPhrases = {
-  ...HttpInformationReasonPhrases,
-  ...HttpSuccessReasonPhrases,
-  ...HttpRedirectionReasonPhrases,
-  ...HttpClientErrorReasonPhrases,
-  ...HttpServerErrorReasonPhrases,
+    ...HttpInformationReasonPhrases,
+    ...HttpSuccessReasonPhrases,
+    ...HttpRedirectionReasonPhrases,
+    ...HttpClientErrorReasonPhrases,
+    ...HttpServerErrorReasonPhrases,
 };
 
 /**
  * The type for HttpReasonPhrases
  */
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 export type HttpReasonPhrases =
     | HttpInformationReasonPhrases
     | HttpSuccessReasonPhrases

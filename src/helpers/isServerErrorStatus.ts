@@ -9,7 +9,7 @@ import { HttpServerErrorReasonPhrases } from '../HttpReasonPhrases';
  * @param statusCode - The integer status code. e.g. 100
  * @returns `true` if matches `false` otherwise
  */
-export const isServerErrorStatusCode = (statusCode: number) =>
+export const isServerErrorStatusCode = (statusCode: number): boolean =>
     HttpServerErrorStatusCodes[statusCode] !== undefined;
 
 /**
@@ -18,7 +18,7 @@ export const isServerErrorStatusCode = (statusCode: number) =>
  * @param statusCode - The integer status code. e.g. 100
  * @returns `true` if matches `false` otherwise
  */
-export const is5xxServerErrorStatusCode = (statusCode: number) =>
+export const is5xxServerErrorStatusCode = (statusCode: number): boolean =>
     statusCode >= 500 && statusCode <= 599;
 
 /**
@@ -29,10 +29,10 @@ export const is5xxServerErrorStatusCode = (statusCode: number) =>
  * @param reasonPhrase - The reason phrase. e.g. 'Ok'
  * @returns `true` if matches `false` otherwise
  */
-export const isServerErrorReasonPhrase = (reasonPhrase: string) =>
-    (<any>Object)
-        .values(HttpServerErrorReasonPhrases)
-        .includes(reasonPhrase) === true;
+export const isServerErrorReasonPhrase = (reasonPhrase: string): boolean =>
+    (Object.values(HttpServerErrorReasonPhrases) as string[]).includes(
+        reasonPhrase
+    ) === true;
 
 /**
  * Checks whether the input integer or string belongs to
@@ -44,7 +44,7 @@ export const isServerErrorReasonPhrase = (reasonPhrase: string) =>
  * @param status - e.g. 'Ok' or 200
  * @returns `true` if matches `false` otherwise
  */
-export const isServerErrorStatus = (status: string | number) =>
+export const isServerErrorStatus = (status: string | number): boolean =>
     isServerErrorStatusCode(status as number) ||
     isServerErrorReasonPhrase(status as string);
 

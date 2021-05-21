@@ -1,196 +1,196 @@
-import HttpClientErrorReasonPhrases from './HttpClientErrorReasonPhrases';
 import { expect } from 'chai';
+import HttpClientErrorReasonPhrases from './HttpClientErrorReasonPhrases';
 
-describe('HttpClientErrorReasonPhrases', () => {
-    describe('#BadRequest', () => {
-        it('status code should be equal to Bad Request', () => {
+describe('HttpClientErrorReasonPhrases', function () {
+    describe('#BadRequest', function () {
+        it('status code should be equal to Bad Request', function () {
             expect(HttpClientErrorReasonPhrases.BadRequest).to.equal(
                 'Bad Request'
             );
         });
     });
-    describe('#UnAuthorised', () => {
-        it('status code should be equal to Unauthorized', () => {
+    describe('#UnAuthorised', function () {
+        it('status code should be equal to Unauthorized', function () {
             expect(HttpClientErrorReasonPhrases.UnAuthorised).to.equal(
                 'Unauthorized'
             );
         });
     });
-    describe('#PaymentRequired', () => {
-        it('status code should be equal to Payment Required', () => {
+    describe('#PaymentRequired', function () {
+        it('status code should be equal to Payment Required', function () {
             expect(HttpClientErrorReasonPhrases.PaymentRequired).to.equal(
                 'Payment Required'
             );
         });
     });
-    describe('#Forbidden', () => {
-        it('status code should be equal to Forbidden', () => {
+    describe('#Forbidden', function () {
+        it('status code should be equal to Forbidden', function () {
             expect(HttpClientErrorReasonPhrases.Forbidden).to.equal(
                 'Forbidden'
             );
         });
     });
-    describe('#NotFound', () => {
-        it('status code should be equal to Not Found', () => {
+    describe('#NotFound', function () {
+        it('status code should be equal to Not Found', function () {
             expect(HttpClientErrorReasonPhrases.NotFound).to.equal('Not Found');
         });
     });
-    describe('#MethodNotAllowed', () => {
-        it('status code should be equal to Method Not Allowed', () => {
+    describe('#MethodNotAllowed', function () {
+        it('status code should be equal to Method Not Allowed', function () {
             expect(HttpClientErrorReasonPhrases.MethodNotAllowed).to.equal(
                 'Method Not Allowed'
             );
         });
     });
-    describe('#NotAcceptable', () => {
-        it('status code should be equal to Not Acceptable', () => {
+    describe('#NotAcceptable', function () {
+        it('status code should be equal to Not Acceptable', function () {
             expect(HttpClientErrorReasonPhrases.NotAcceptable).to.equal(
                 'Not Acceptable'
             );
         });
     });
-    describe('#ProxyAuthenticationRequired', () => {
-        it('status code should be equal to Proxy Authentication Required', () => {
+    describe('#ProxyAuthenticationRequired', function () {
+        it('status code should be equal to Proxy Authentication Required', function () {
             expect(
                 HttpClientErrorReasonPhrases.ProxyAuthenticationRequired
             ).to.equal('Proxy Authentication Required');
         });
     });
-    describe('#RequestTimeout', () => {
-        it('status code should be equal to Request Timeout', () => {
+    describe('#RequestTimeout', function () {
+        it('status code should be equal to Request Timeout', function () {
             expect(HttpClientErrorReasonPhrases.RequestTimeout).to.equal(
                 'Request Timeout'
             );
         });
     });
-    describe('#Conflict', () => {
-        it('status code should be equal to Conflict', () => {
+    describe('#Conflict', function () {
+        it('status code should be equal to Conflict', function () {
             expect(HttpClientErrorReasonPhrases.Conflict).to.equal('Conflict');
         });
     });
-    describe('#Gone', () => {
-        it('status code should be equal to Gone', () => {
+    describe('#Gone', function () {
+        it('status code should be equal to Gone', function () {
             expect(HttpClientErrorReasonPhrases.Gone).to.equal('Gone');
         });
     });
-    describe('#LengthRequired', () => {
-        it('status code should be equal to Length Required', () => {
+    describe('#LengthRequired', function () {
+        it('status code should be equal to Length Required', function () {
             expect(HttpClientErrorReasonPhrases.LengthRequired).to.equal(
                 'Length Required'
             );
         });
     });
-    describe('#PreconditionFailed', () => {
-        it('status code should be equal to Precondition Failed', () => {
+    describe('#PreconditionFailed', function () {
+        it('status code should be equal to Precondition Failed', function () {
             expect(HttpClientErrorReasonPhrases.PreconditionFailed).to.equal(
                 'Precondition Failed'
             );
         });
     });
-    describe('#PayloadTooLarge', () => {
-        it('status code should be equal to Payload Too Large', () => {
+    describe('#PayloadTooLarge', function () {
+        it('status code should be equal to Payload Too Large', function () {
             expect(HttpClientErrorReasonPhrases.PayloadTooLarge).to.equal(
                 'Payload Too Large'
             );
         });
     });
-    describe('#URITooLong', () => {
-        it('status code should be equal to URI Too Long', () => {
+    describe('#URITooLong', function () {
+        it('status code should be equal to URI Too Long', function () {
             expect(HttpClientErrorReasonPhrases.URITooLong).to.equal(
                 'URI Too Long'
             );
         });
     });
-    describe('#UnsupportedMediaType', () => {
-        it('status code should be equal to Unsupported Media Type', () => {
+    describe('#UnsupportedMediaType', function () {
+        it('status code should be equal to Unsupported Media Type', function () {
             expect(HttpClientErrorReasonPhrases.UnsupportedMediaType).to.equal(
                 'Unsupported Media Type'
             );
         });
     });
-    describe('#RangeNotSatisfiable', () => {
-        it('status code should be equal to Range Not Satisfiable', () => {
+    describe('#RangeNotSatisfiable', function () {
+        it('status code should be equal to Range Not Satisfiable', function () {
             expect(HttpClientErrorReasonPhrases.RangeNotSatisfiable).to.equal(
                 'Range Not Satisfiable'
             );
         });
     });
-    describe('#ExpectationFailed', () => {
-        it('status code should be equal to Expectation Failed', () => {
+    describe('#ExpectationFailed', function () {
+        it('status code should be equal to Expectation Failed', function () {
             expect(HttpClientErrorReasonPhrases.ExpectationFailed).to.equal(
                 'Expectation Failed'
             );
         });
     });
-    describe('#IAmATeapot', () => {
-        it("status code should be equal to I'm a teapot", () => {
+    describe('#IAmATeapot', function () {
+        it("status code should be equal to I'm a teapot", function () {
             expect(HttpClientErrorReasonPhrases.IAmATeapot).to.equal(
                 "I'm a teapot"
             );
         });
     });
-    describe('#MisdirectedRequest', () => {
-        it('status code should be equal to Misdirected Request', () => {
+    describe('#MisdirectedRequest', function () {
+        it('status code should be equal to Misdirected Request', function () {
             expect(HttpClientErrorReasonPhrases.MisdirectedRequest).to.equal(
                 'Misdirected Request'
             );
         });
     });
 
-    describe('#UnprocessableEntity', () => {
-        it('status code should be equal to Unprocessable Entity', () => {
+    describe('#UnprocessableEntity', function () {
+        it('status code should be equal to Unprocessable Entity', function () {
             expect(HttpClientErrorReasonPhrases.UnprocessableEntity).to.equal(
                 'Unprocessable Entity'
             );
         });
     });
-    describe('#Locked', () => {
-        it('status code should be equal to Locked', () => {
+    describe('#Locked', function () {
+        it('status code should be equal to Locked', function () {
             expect(HttpClientErrorReasonPhrases.Locked).to.equal('Locked');
         });
     });
-    describe('#FailedDependency', () => {
-        it('status code should be equal to Failed Dependency', () => {
+    describe('#FailedDependency', function () {
+        it('status code should be equal to Failed Dependency', function () {
             expect(HttpClientErrorReasonPhrases.FailedDependency).to.equal(
                 'Failed Dependency'
             );
         });
     });
-    describe('#TooEarly', () => {
-        it('status code should be equal to Too Early', () => {
+    describe('#TooEarly', function () {
+        it('status code should be equal to Too Early', function () {
             expect(HttpClientErrorReasonPhrases.TooEarly).to.equal('Too Early');
         });
     });
-    describe('#UpgradeRequired', () => {
-        it('status code should be equal to Upgrade Required', () => {
+    describe('#UpgradeRequired', function () {
+        it('status code should be equal to Upgrade Required', function () {
             expect(HttpClientErrorReasonPhrases.UpgradeRequired).to.equal(
                 'Upgrade Required'
             );
         });
     });
-    describe('#PreconditionRequired', () => {
-        it('status code should be equal to Precondition Required', () => {
+    describe('#PreconditionRequired', function () {
+        it('status code should be equal to Precondition Required', function () {
             expect(HttpClientErrorReasonPhrases.PreconditionRequired).to.equal(
                 'Precondition Required'
             );
         });
     });
-    describe('#TooManyRequests', () => {
-        it('status code should be equal to Too Many Requests', () => {
+    describe('#TooManyRequests', function () {
+        it('status code should be equal to Too Many Requests', function () {
             expect(HttpClientErrorReasonPhrases.TooManyRequests).to.equal(
                 'Too Many Requests'
             );
         });
     });
-    describe('#RequestHeaderFieldsTooLarge', () => {
-        it('status code should be equal to Request Header Fields Too Large', () => {
+    describe('#RequestHeaderFieldsTooLarge', function () {
+        it('status code should be equal to Request Header Fields Too Large', function () {
             expect(
                 HttpClientErrorReasonPhrases.RequestHeaderFieldsTooLarge
             ).to.equal('Request Header Fields Too Large');
         });
     });
-    describe('#UnavailableForLegalReasons', () => {
-        it('status code should be equal to Unavailable For Legal Reasons', () => {
+    describe('#UnavailableForLegalReasons', function () {
+        it('status code should be equal to Unavailable For Legal Reasons', function () {
             expect(
                 HttpClientErrorReasonPhrases.UnavailableForLegalReasons
             ).to.equal('Unavailable For Legal Reasons');

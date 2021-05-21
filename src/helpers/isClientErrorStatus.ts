@@ -9,7 +9,7 @@ import { HttpClientErrorReasonPhrases } from '../HttpReasonPhrases';
  * @param statusCode - The integer status code. e.g. 100
  * @returns `true` if matches `false` otherwise
  */
-export const isClientErrorStatusCode = (statusCode: number) =>
+export const isClientErrorStatusCode = (statusCode: number): boolean =>
     HttpClientErrorStatusCodes[statusCode] !== undefined;
 
 /**
@@ -18,7 +18,7 @@ export const isClientErrorStatusCode = (statusCode: number) =>
  * @param statusCode - The integer status code. e.g. 100
  * @returns `true` if matches `false` otherwise
  */
-export const is4xxClientErrorStatusCode = (statusCode: number) =>
+export const is4xxClientErrorStatusCode = (statusCode: number): boolean =>
     statusCode >= 400 && statusCode <= 499;
 
 /**
@@ -29,10 +29,10 @@ export const is4xxClientErrorStatusCode = (statusCode: number) =>
  * @param reasonPhrase - The reason phrase. e.g. 'Ok'
  * @returns `true` if matches `false` otherwise
  */
-export const isClientErrorReasonPhrase = (reasonPhrase: string) =>
-    (<any>Object)
-        .values(HttpClientErrorReasonPhrases)
-        .includes(reasonPhrase) === true;
+export const isClientErrorReasonPhrase = (reasonPhrase: string): boolean =>
+    (Object.values(HttpClientErrorReasonPhrases) as string[]).includes(
+        reasonPhrase
+    ) === true;
 
 /**
  * Checks whether the input integer or string belongs to
@@ -44,8 +44,6 @@ export const isClientErrorReasonPhrase = (reasonPhrase: string) =>
  * @param status - e.g. 'Ok' or 200
  * @returns `true` if matches `false` otherwise
  */
-export const isClientErrorStatus = (status: string | number) =>
+export const isClientErrorStatus = (status: string | number): boolean =>
     isClientErrorStatusCode(status as number) ||
     isClientErrorReasonPhrase(status as string);
-
-export default isClientErrorStatus;

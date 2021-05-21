@@ -3,7 +3,8 @@ import HttpSuccessReasonPhrases from './HttpSuccessReasonPhrases';
 import HttpRedirectionReasonPhrases from './HttpRedirectionReasonPhrases';
 import HttpClientErrorReasonPhrases from './HttpClientErrorReasonPhrases';
 import HttpServerErrorReasonPhrases from './HttpServerErrorReasonPhrases';
-import { HttpReasonPhrases } from './HttpReasonPhrases';
+
+export * from './HttpReasonPhrases';
 
 export {
     HttpInformationReasonPhrases,
@@ -11,7 +12,4 @@ export {
     HttpRedirectionReasonPhrases,
     HttpClientErrorReasonPhrases,
     HttpServerErrorReasonPhrases,
-    HttpReasonPhrases,
 };
-
-export default HttpReasonPhrases;

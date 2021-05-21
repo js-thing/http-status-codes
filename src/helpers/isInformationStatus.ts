@@ -9,7 +9,7 @@ import { HttpInformationReasonPhrases } from '../HttpReasonPhrases';
  * @param statusCode - The integer status code. e.g. 100
  * @returns `true` if matches `false` otherwise
  */
-export const isInformationStatusCode = (statusCode: number) =>
+export const isInformationStatusCode = (statusCode: number): boolean =>
     HttpInformationStatusCodes[statusCode] !== undefined;
 
 /**
@@ -18,7 +18,7 @@ export const isInformationStatusCode = (statusCode: number) =>
  * @param statusCode - The integer status code. e.g. 100
  * @returns `true` if matches `false` otherwise
  */
-export const is1xxInformationStatusCode = (statusCode: number) =>
+export const is1xxInformationStatusCode = (statusCode: number): boolean =>
     statusCode >= 100 && statusCode <= 199;
 
 /**
@@ -29,10 +29,10 @@ export const is1xxInformationStatusCode = (statusCode: number) =>
  * @param reasonPhrase - The reason phrase. e.g. 'Ok'
  * @returns `true` if matches `false` otherwise
  */
-export const isInformationReasonPhrase = (reasonPhrase: string) =>
-    (<any>Object)
-        .values(HttpInformationReasonPhrases)
-        .includes(reasonPhrase) === true;
+export const isInformationReasonPhrase = (reasonPhrase: string): boolean =>
+    (Object.values(HttpInformationReasonPhrases) as string[]).includes(
+        reasonPhrase
+    ) === true;
 
 /**
  * Checks whether the input integer or string belongs to
@@ -44,8 +44,6 @@ export const isInformationReasonPhrase = (reasonPhrase: string) =>
  * @param status - e.g. 'Ok' or 200
  * @returns `true` if matches `false` otherwise
  */
-export const isInformationStatus = (status: string | number) =>
+export const isInformationStatus = (status: string | number): boolean =>
     isInformationStatusCode(status as number) ||
     isInformationReasonPhrase(status as string);
-
-export default isInformationStatus;

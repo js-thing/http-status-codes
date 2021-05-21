@@ -3,5 +3,5 @@ export * from './isSuccessStatus';
 export * from './isRedirectionStatus';
 export * from './isClientErrorStatus';
 export * from './isServerErrorStatus';
-export * from './getReasonPhrase';
-export * from './getCompositeStatus';
+export { default as getReasonPhrase } from './getReasonPhrase';
+export { default as getCompositeStatus } from './getCompositeStatus';
