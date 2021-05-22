@@ -10,8 +10,8 @@ enum HttpServerErrorReasonPhrases {
      *
      * The server has encountered a situation it doesn't know how to handle.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.6.1)
      * @type {string}
      */
     InternalServerError = 'Internal Server Error',
@@ -23,8 +23,8 @@ enum HttpServerErrorReasonPhrases {
      * The only methods that servers are required to support
      * (and therefore that must not return this code) are ```GET``` and ```HEAD```.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.6.2)
      * @type {string}
      */
     NotImplemented = 'Not Implemented',
@@ -36,8 +36,8 @@ enum HttpServerErrorReasonPhrases {
      * while working as a gateway to get a response needed to
      * handle the request, got an invalid response.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.6.3)
      * @type {string}
      */
     BadGateway = 'Bad Gateway',
@@ -54,8 +54,8 @@ enum HttpServerErrorReasonPhrases {
      * caching-related headers that are sent along with this response,
      * as these temporary condition responses should usually not be cached.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.6.4)
      * @type {string}
      */
     ServiceUnavailable = 'Service Unavailable',
@@ -66,8 +66,8 @@ enum HttpServerErrorReasonPhrases {
      * This error response is given when the server is acting as
      * a gateway and cannot get a response in time.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/504) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.6.5)
      * @type {string}
      */
     GatewayTimeout = 'Gateway Timeout',
@@ -78,8 +78,8 @@ enum HttpServerErrorReasonPhrases {
      * The HTTP version used in
      * the request is not supported by the server.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/505)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/505) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.6.6)
      * @type {string}
      */
     HTTPVersionNotSupported = 'HTTP Version Not Supported',
@@ -91,8 +91,8 @@ enum HttpServerErrorReasonPhrases {
      * resource is configured to engage in transparent content negotiation itself,
      * and is therefore not a proper end point in the negotiation process.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/506)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/506) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc2295#section-8.1)
      * @type {string}
      */
     VariantAlsoNegotiates = 'Variant Also Negotiates',
@@ -103,8 +103,8 @@ enum HttpServerErrorReasonPhrases {
      * The method could not be performed on the resource because the server is
      * unable to store the representation needed to successfully complete the request.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/507)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/507) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc2518#section-10.6)
      * @type {string}
      */
     InsufficientStorage = 'Insufficient Storage',
@@ -114,8 +114,8 @@ enum HttpServerErrorReasonPhrases {
      *
      * The server detected an infinite loop while processing the request.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/508)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/508) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc5842#section-7.2)
      * @type {string}
      */
     LoopDetected = 'Loop Detected',
@@ -125,8 +125,8 @@ enum HttpServerErrorReasonPhrases {
      *
      * Further extensions to the request are required for the server to fulfill it.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/510)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/510) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc2774#section-7)
      * @type {string}
      */
     NotExtended = 'Not Extended',
@@ -137,8 +137,8 @@ enum HttpServerErrorReasonPhrases {
      * The 511 status code indicates that
      * the client needs to authenticate to gain network access.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/511)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/511) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc6585#section-6)
      * @type {string}
      */
     NetworkAuthenticationRequired = 'Network Authentication Required',
