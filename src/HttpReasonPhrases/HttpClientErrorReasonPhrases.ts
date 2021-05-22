@@ -10,8 +10,8 @@ enum HttpClientErrorReasonPhrases {
      *
      * The server could not understand the request due to invalid syntax.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.1)
      * @type {string}
      */
     BadRequest = 'Bad Request',
@@ -23,8 +23,8 @@ enum HttpClientErrorReasonPhrases {
      * semantically this response means "unauthenticated".
      * That is, the client must authenticate itself to get the requested response.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7235#section-3.1)
      * @type {string}
      */
     UnAuthorised = 'Unauthorized',
@@ -36,8 +36,8 @@ enum HttpClientErrorReasonPhrases {
      * The initial aim for creating this code was using it for digital payment systems,
      * however this status code is used very rarely and no standard convention exists.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.2)
      * @type {string}
      */
     PaymentRequired = 'Payment Required',
@@ -49,8 +49,8 @@ enum HttpClientErrorReasonPhrases {
      * that is, it is unauthorized, so the server is refusing to give the requested resource.
      * Unlike 401, the client's identity is known to the server.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.3)
      * @type {string}
      */
     Forbidden = 'Forbidden',
@@ -66,8 +66,8 @@ enum HttpClientErrorReasonPhrases {
      * of a resource from an unauthorized client.
      * This response code is probably the most famous one due to its frequent occurrence on the web.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.4)
      * @type {string}
      */
     NotFound = 'Not Found',
@@ -78,11 +78,11 @@ enum HttpClientErrorReasonPhrases {
      * The request method is known by the server
      * but has been disabled and cannot be used.
      * For example, an API may forbid DELETE-ing a resource.
-     * The two mandatory methods, ```GET``` and ```HEAD```,
+     * The two mandatory methods, `GET` and `HEAD`,
      * must never be disabled and should not return this error code.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.5)
      * @type {string}
      */
     MethodNotAllowed = 'Method Not Allowed',
@@ -94,8 +94,8 @@ enum HttpClientErrorReasonPhrases {
      * server-driven content negotiation,
      * doesn't find any content that conforms to the criteria given by the user agent.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/406)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/406) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.6)
      * @type {string}
      */
     NotAcceptable = 'Not Acceptable',
@@ -106,8 +106,8 @@ enum HttpClientErrorReasonPhrases {
      * This is similar to 401 but
      * authentication is needed to be done by a proxy.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/407) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7235#section-3.2)
      * @type {string}
      */
     ProxyAuthenticationRequired = 'Proxy Authentication Required',
@@ -122,8 +122,8 @@ enum HttpClientErrorReasonPhrases {
      * or IE9, use HTTP pre-connection mechanisms to speed up surfing.
      * Also note that some servers merely shut down the connection without sending this message.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/408)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/408) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.7)
      * @type {string}
      */
     RequestTimeout = 'Request Timeout',
@@ -134,8 +134,8 @@ enum HttpClientErrorReasonPhrases {
      * This response is sent when a request
      * conflicts with the current state of the server.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/409)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/409) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.8)
      * @type {string}
      */
     Conflict = 'Conflict',
@@ -152,8 +152,8 @@ enum HttpClientErrorReasonPhrases {
      * APIs should not feel compelled to indicate resources that have been
      * deleted with this status code.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/410)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/410) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.9)
      * @type {string}
      */
     Gone = 'Gone',
@@ -161,11 +161,11 @@ enum HttpClientErrorReasonPhrases {
     /**
      * ### 411 Length Required
      *
-     * Server rejected the request because the ```Content-Length``` header field
+     * Server rejected the request because the `Content-Length` header field
      * is not defined and the server requires it.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/411)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/411) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.10)
      * @type {string}
      */
     LengthRequired = 'Length Required',
@@ -176,8 +176,8 @@ enum HttpClientErrorReasonPhrases {
      * The client has indicated preconditions
      * in its headers which the server does not meet.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/412)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/412) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7232#section-4.2)
      * @type {string}
      */
     PreconditionFailed = 'Precondition Failed',
@@ -186,10 +186,10 @@ enum HttpClientErrorReasonPhrases {
      * ### 413 Payload Too Large
      *
      * Request entity is larger than limits defined by server;
-     * the server might close the connection or return an ```Retry-After``` header field.
+     * the server might close the connection or return an `Retry-After` header field.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/413)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/413) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.11)
      * @type {string}
      */
     PayloadTooLarge = 'Payload Too Large',
@@ -200,8 +200,8 @@ enum HttpClientErrorReasonPhrases {
      * The URI requested by the
      * client is longer than the server is willing to interpret.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/414)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/414) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.12)
      * @type {string}
      */
     URITooLong = 'URI Too Long',
@@ -213,8 +213,8 @@ enum HttpClientErrorReasonPhrases {
      * of the requested data is not supported by the server,
      * so the server is rejecting the request.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/415)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/415) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.13)
      * @type {string}
      */
     UnsupportedMediaType = 'Unsupported Media Type',
@@ -222,12 +222,12 @@ enum HttpClientErrorReasonPhrases {
     /**
      * ### 416 Range Not Satisfiable
      *
-     * The range specified by the ```Range```
+     * The range specified by the `Range`
      * header field in the request can't be fulfilled;
      * it's possible that the range is outside the size of the target URI's data.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/416)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/416) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7233#section-4.4)
      * @type {string}
      */
     RangeNotSatisfiable = 'Range Not Satisfiable',
@@ -236,10 +236,10 @@ enum HttpClientErrorReasonPhrases {
      * ### 417 Expectation Failed
      *
      * This response code means the expectation indicated by the
-     * ```Expect``` request header field can't be met by the server.
+     * `Expect` request header field can't be met by the server.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/417)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/417) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.14)
      * @type {string}
      */
     ExpectationFailed = 'Expectation Failed',
@@ -249,8 +249,8 @@ enum HttpClientErrorReasonPhrases {
      *
      * The server refuses the attempt to brew coffee with a teapot.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc2324#section-2.3.2)
      * @type {string}
      */
     IAmATeapot = "I'm a teapot",
@@ -264,8 +264,8 @@ enum HttpClientErrorReasonPhrases {
      * responses for the combination of
      * scheme and authority that are included in the request URI.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/421)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/421) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7540#section-9.1.2)
      * @type {string}
      */
     MisdirectedRequest = 'Misdirected Request',
@@ -276,8 +276,8 @@ enum HttpClientErrorReasonPhrases {
      * The request was well-formed
      * but was unable to be followed due to semantic errors.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc2518#section-10.3)
      * @type {string}
      */
     UnprocessableEntity = 'Unprocessable Entity',
@@ -287,8 +287,8 @@ enum HttpClientErrorReasonPhrases {
      *
      * The resource that is being accessed is locked.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/423)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/423) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc2518#section-10.4)
      * @type {string}
      */
     Locked = 'Locked',
@@ -298,8 +298,8 @@ enum HttpClientErrorReasonPhrases {
      *
      * The request failed due to failure of a previous request.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/424)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/424) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc2518#section-10.5)
      * @type {string}
      */
     FailedDependency = 'Failed Dependency',
@@ -310,8 +310,8 @@ enum HttpClientErrorReasonPhrases {
      * Indicates that the server is unwilling to
      * risk processing a request that might be replayed.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/425)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/425) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc8470#section-5.2)
      * @type {string}
      */
     TooEarly = 'Too Early',
@@ -325,8 +325,8 @@ enum HttpClientErrorReasonPhrases {
      * [Upgrade](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Upgrade)
      * header in a 426 response to indicate the required protocol(s).
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/426)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/426) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.15)
      * @type {string}
      */
     UpgradeRequired = 'Upgrade Required',
@@ -339,8 +339,8 @@ enum HttpClientErrorReasonPhrases {
      * where a client GETs a resource's state, modifies it, and PUTs it back to the server,
      * when meanwhile a third party has modified the state on the server, leading to a conflict.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/428)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/428) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc6585#section-3)
      * @type {string}
      */
     PreconditionRequired = 'Precondition Required',
@@ -351,8 +351,8 @@ enum HttpClientErrorReasonPhrases {
      * The user has sent too many
      * requests in a given amount of time ("rate limiting").
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc6585#section-4)
      * @type {string}
      */
     TooManyRequests = 'Too Many Requests',
@@ -364,8 +364,8 @@ enum HttpClientErrorReasonPhrases {
      * because its header fields are too large.
      * The request may be resubmitted after reducing the size of the request header fields.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/431)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/431) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc6585#section-5)
      * @type {string}
      */
     RequestHeaderFieldsTooLarge = 'Request Header Fields Too Large',
@@ -377,8 +377,8 @@ enum HttpClientErrorReasonPhrases {
      * requested a resource that cannot legally be provided,
      * such as a web page censored by a government
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/451) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7725#section-3)
      * @type {string}
      */
     UnavailableForLegalReasons = 'Unavailable For Legal Reasons',

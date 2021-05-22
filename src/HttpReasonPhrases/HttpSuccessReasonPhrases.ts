@@ -10,17 +10,17 @@ enum HttpSuccessReasonPhrases {
      *
      * The request has succeeded. The meaning of the success depends on the HTTP method:
      *
-     * ```GET```: The resource has been fetched and is transmitted in the message body.
+     * `GET`: The resource has been fetched and is transmitted in the message body.
      *
-     * ```HEAD```: The entity headers are in the message body.
+     * `HEAD`: The entity headers are in the message body.
      *
-     * ```PUT``` or ```POST```: The resource describing the result.
+     * `PUT` or `POST`: The resource describing the result.
      * of the action is transmitted in the message body.
      *
-     * ```TRACE```: The message body contains the request message as received by the server.
+     * `TRACE`: The message body contains the request message as received by the server.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1)
      * @type {string}
      */
     Ok = 'OK',
@@ -29,10 +29,10 @@ enum HttpSuccessReasonPhrases {
      * ### 201 Created
      *
      * The request has succeeded and a new resource has been created as a result.
-     * This is typically the response sent after ```POST``` requests, or some ```PUT``` requests.
+     * This is typically the response sent after `POST` requests, or some `PUT` requests.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.2)
      * @type {string}
      */
     Created = 'Created',
@@ -45,8 +45,8 @@ enum HttpSuccessReasonPhrases {
      * indicating the outcome of the request. It is intended for cases where
      * another process or server handles the request, or for batch processing.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/202)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/202) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.3)
      * @type {string}
      */
     Accepted = 'Accepted',
@@ -60,8 +60,8 @@ enum HttpSuccessReasonPhrases {
      *
      * Except for that specific case, the "200 OK" response is preferred to this status.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/203)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/203) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.4)
      * @type {string}
      */
     NonAuthoritativeInformation = 'Non-Authoritative Information',
@@ -72,8 +72,8 @@ enum HttpSuccessReasonPhrases {
      * There is no content to send for this request, but the headers may be useful.
      * The user-agent may update its cached headers for this resource with the new ones.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/204) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.5)
      * @type {string}
      */
     NoContent = 'No Content',
@@ -83,8 +83,8 @@ enum HttpSuccessReasonPhrases {
      *
      * Tells the user-agent to reset the document which sent this request.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/205)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/205) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.6)
      * @type {string}
      */
     ResetContent = 'Reset Content',
@@ -97,8 +97,8 @@ enum HttpSuccessReasonPhrases {
      * header is sent from the client to
      * request only part of a resource.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/206)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/206) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7233#section-4.1)
      * @type {string}
      */
     PartialContent = 'Partial Content',
@@ -109,8 +109,8 @@ enum HttpSuccessReasonPhrases {
      * Conveys information about multiple resources, for situations where
      * multiple status codes might be appropriate.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/207)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/207) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc2518#section-10.2)
      * @type {string}
      */
     MultiStatus = 'Multi-Status',
@@ -118,11 +118,11 @@ enum HttpSuccessReasonPhrases {
     /**
      * ### 208 Already Reported (WebDAV)
      *
-     * Used inside a ```<dav:propstat>``` response element to avoid repeatedly
+     * Used inside a `<dav:propstat>` response element to avoid repeatedly
      * enumerating the internal members of multiple bindings to the same collection.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/208)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/208) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc5842#section-7.1)
      * @type {string}
      */
     AlreadyReported = 'Already Reported',
@@ -130,12 +130,12 @@ enum HttpSuccessReasonPhrases {
     /**
      * ### 226 IM Used (HTTP Delta encoding)
      *
-     * The server has fulfilled a ```GET``` request for the resource, and the response is
+     * The server has fulfilled a `GET` request for the resource, and the response is
      * a representation of the result of one or more
      * instance-manipulations applied to the current instance.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/226)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/226) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc3229#section-10.4.1)
      * @type {string}
      */
     IMUsed = 'IM Used',
