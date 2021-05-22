@@ -78,7 +78,7 @@ enum HttpClientErrorReasonPhrases {
      * The request method is known by the server
      * but has been disabled and cannot be used.
      * For example, an API may forbid DELETE-ing a resource.
-     * The two mandatory methods, ```GET``` and ```HEAD```,
+     * The two mandatory methods, `GET` and `HEAD`,
      * must never be disabled and should not return this error code.
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/405) |
@@ -161,7 +161,7 @@ enum HttpClientErrorReasonPhrases {
     /**
      * ### 411 Length Required
      *
-     * Server rejected the request because the ```Content-Length``` header field
+     * Server rejected the request because the `Content-Length` header field
      * is not defined and the server requires it.
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/411) |
@@ -186,7 +186,7 @@ enum HttpClientErrorReasonPhrases {
      * ### 413 Payload Too Large
      *
      * Request entity is larger than limits defined by server;
-     * the server might close the connection or return an ```Retry-After``` header field.
+     * the server might close the connection or return an `Retry-After` header field.
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/413) |
      * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.11)
@@ -222,7 +222,7 @@ enum HttpClientErrorReasonPhrases {
     /**
      * ### 416 Range Not Satisfiable
      *
-     * The range specified by the ```Range```
+     * The range specified by the `Range`
      * header field in the request can't be fulfilled;
      * it's possible that the range is outside the size of the target URI's data.
      *
@@ -236,7 +236,7 @@ enum HttpClientErrorReasonPhrases {
      * ### 417 Expectation Failed
      *
      * This response code means the expectation indicated by the
-     * ```Expect``` request header field can't be met by the server.
+     * `Expect` request header field can't be met by the server.
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/417) |
      * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.5.14)

@@ -10,14 +10,14 @@ enum HttpSuccessReasonPhrases {
      *
      * The request has succeeded. The meaning of the success depends on the HTTP method:
      *
-     * ```GET```: The resource has been fetched and is transmitted in the message body.
+     * `GET`: The resource has been fetched and is transmitted in the message body.
      *
-     * ```HEAD```: The entity headers are in the message body.
+     * `HEAD`: The entity headers are in the message body.
      *
-     * ```PUT``` or ```POST```: The resource describing the result.
+     * `PUT` or `POST`: The resource describing the result.
      * of the action is transmitted in the message body.
      *
-     * ```TRACE```: The message body contains the request message as received by the server.
+     * `TRACE`: The message body contains the request message as received by the server.
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200) |
      * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.1)
@@ -29,7 +29,7 @@ enum HttpSuccessReasonPhrases {
      * ### 201 Created
      *
      * The request has succeeded and a new resource has been created as a result.
-     * This is typically the response sent after ```POST``` requests, or some ```PUT``` requests.
+     * This is typically the response sent after `POST` requests, or some `PUT` requests.
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/201) |
      * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.3.2)
@@ -118,7 +118,7 @@ enum HttpSuccessReasonPhrases {
     /**
      * ### 208 Already Reported (WebDAV)
      *
-     * Used inside a ```<dav:propstat>``` response element to avoid repeatedly
+     * Used inside a `<dav:propstat>` response element to avoid repeatedly
      * enumerating the internal members of multiple bindings to the same collection.
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/208) |
@@ -130,7 +130,7 @@ enum HttpSuccessReasonPhrases {
     /**
      * ### 226 IM Used (HTTP Delta encoding)
      *
-     * The server has fulfilled a ```GET``` request for the resource, and the response is
+     * The server has fulfilled a `GET` request for the resource, and the response is
      * a representation of the result of one or more
      * instance-manipulations applied to the current instance.
      *
