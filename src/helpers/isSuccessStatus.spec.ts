@@ -5,98 +5,112 @@ import {
     isSuccessReasonPhrase,
     is2xxSuccessStatusCode,
 } from './isSuccessStatus';
-import {
-    HttpSuccessStatusCodes,
-    HttpServerErrorStatusCodes,
-} from '../HttpStatusCodes';
+import { HttpSuccessStatusCodes, HttpStatusCodes } from '../HttpStatusCodes';
 import {
     HttpSuccessReasonPhrases,
-    HttpServerErrorReasonPhrases,
+    HttpReasonPhrases,
 } from '../HttpReasonPhrases';
 
-describe('helper functions', function () {
-    describe('# isSuccessStatusCode(statusCode)', function () {
-        it('should return `true` if the argument is defined in HttpSuccessStatusCodes', function () {
-            expect(isSuccessStatusCode(HttpSuccessStatusCodes.Ok)).to.be.true;
+describe('isSuccessStatus', function () {
+    describe('isSuccessStatusCode', function () {
+        it('# Returns true for all codes defined in HttpSuccessStatusCodes', function () {
+            Object.values(HttpSuccessStatusCodes).forEach((code) => {
+                if (typeof code === 'number') {
+                    expect(isSuccessStatusCode(code)).to.be.true;
+                }
+            });
+            expect(isSuccessStatusCode(200)).to.be.true;
         });
-        it('should return `true` if the argument is a valid defined code between [200 - 299]', function () {
-            expect(isSuccessStatusCode(201)).to.be.true;
-        });
-        it('should return `false` if the argument is not defined in HttpSuccessStatusCodes', function () {
-            expect(
-                isSuccessStatusCode(
-                    HttpServerErrorStatusCodes.InternalServerError
-                )
-            ).to.be.false;
-        });
-        it('should return `false` if the argument is not a valid defined code between [200 - 299]', function () {
-            expect(isSuccessStatusCode(404)).to.be.false;
-        });
-    });
-
-    describe('# isSuccessReasonPhrase(statusPhrase)', function () {
-        it('should return `true` if the argument is defined in HttpSuccessReasonPhrases', function () {
-            expect(isSuccessReasonPhrase(HttpSuccessReasonPhrases.Ok)).to.be
-                .true;
-        });
-        it('should return `true` if the argument is a valid reason phrase string', function () {
-            expect(isSuccessReasonPhrase('No Content')).to.be.true;
-        });
-        it('should return `false` if the argument is not defined in HttpSuccessReasonPhrases', function () {
-            expect(
-                isSuccessReasonPhrase(
-                    HttpServerErrorReasonPhrases.InternalServerError
-                )
-            ).to.be.false;
-        });
-        it('should return `false` if the argument is not a valid reason phrase string', function () {
-            expect(isSuccessReasonPhrase('Internal Server Error')).to.be.false;
+        it('# Returns false for all codes not defined in HttpSuccessStatusCodes', function () {
+            Object.values(HttpStatusCodes).forEach((code) => {
+                if (
+                    typeof code === 'number' &&
+                    !(code in HttpSuccessStatusCodes)
+                ) {
+                    expect(isSuccessStatusCode(code)).to.be.false;
+                }
+            });
+            expect(isSuccessStatusCode(2344575)).to.be.false;
         });
     });
 
-    describe('# isSuccessStatus(status)', function () {
-        it('should return `true` if the argument is defined in HttpSuccessStatusCodes', function () {
-            expect(isSuccessStatus(HttpSuccessStatusCodes.Ok)).to.be.true;
+    describe('isSuccessReasonPhrase', function () {
+        it('# Returns true for all phrases defined in HttpSuccessReasonPhrases', function () {
+            Object.values(HttpSuccessReasonPhrases).forEach((phrase) => {
+                expect(isSuccessReasonPhrase(phrase)).to.be.true;
+            });
+            expect(isSuccessReasonPhrase('OK')).to.be.true;
         });
-        it('should return `true` if the argument is a valid defined code between [200 - 299]', function () {
-            expect(isSuccessStatus(201)).to.be.true;
-        });
-        it('should return `false` if the argument is not defined in HttpSuccessStatusCodes', function () {
-            expect(
-                isSuccessStatus(HttpServerErrorStatusCodes.InternalServerError)
-            ).to.be.false;
-        });
-        it('should return `false` if the argument is not a valid defined code between [200 - 299]', function () {
-            expect(isSuccessStatus(404)).to.be.false;
-        });
-
-        it('should return `true` if the argument is defined in HttpSuccessReasonPhrases', function () {
-            expect(isSuccessStatus(HttpSuccessReasonPhrases.Ok)).to.be.true;
-        });
-        it('should return `true` if the argument is a valid reason phrase string', function () {
-            expect(isSuccessStatus('No Content')).to.be.true;
-        });
-        it('should return `false` if the argument is not defined in HttpSuccessReasonPhrases', function () {
-            expect(
-                isSuccessStatus(
-                    HttpServerErrorReasonPhrases.InternalServerError
-                )
-            ).to.be.false;
-        });
-        it('should return `false` if the argument is not a valid reason phrase string', function () {
-            expect(isSuccessStatus('Internal Server Error')).to.be.false;
+        it('# Returns false for all phrases not defined in HttpSuccessReasonPhrases', function () {
+            Object.entries(HttpReasonPhrases).forEach((phrase) => {
+                if (
+                    !(
+                        HttpSuccessReasonPhrases as {
+                            [key: string]: string;
+                        }
+                    )[phrase[0]]
+                ) {
+                    expect(isSuccessReasonPhrase(phrase[1])).to.be.false;
+                }
+            });
+            expect(isSuccessReasonPhrase('Bad Request')).to.be.false;
         });
     });
 
-    describe('# is2xxSuccessStatusCode(statusCode)', function () {
-        it('should return true for any integer between 200 to 299', function () {
-            expect(is2xxSuccessStatusCode(200)).to.be.true;
-            expect(is2xxSuccessStatusCode(250)).to.be.true;
-            expect(is2xxSuccessStatusCode(299)).to.be.true;
+    describe('isSuccessStatus', function () {
+        it('# Returns true for all codes defined in HttpSuccessStatusCodes', function () {
+            Object.values(HttpSuccessStatusCodes).forEach((code) => {
+                if (typeof code === 'number') {
+                    expect(isSuccessStatus(code)).to.be.true;
+                }
+            });
+            expect(isSuccessStatus(200)).to.be.true;
         });
-        it('should return false for any integer outside of 200 to 299', function () {
-            expect(is2xxSuccessStatusCode(100)).to.be.false;
-            expect(is2xxSuccessStatusCode(500)).to.be.false;
+        it('# Returns false for all codes not defined in HttpSuccessStatusCodes', function () {
+            Object.values(HttpStatusCodes).forEach((code) => {
+                if (
+                    typeof code === 'number' &&
+                    !(code in HttpSuccessStatusCodes)
+                ) {
+                    expect(isSuccessStatus(code)).to.be.false;
+                }
+            });
+            expect(isSuccessStatus(2344575)).to.be.false;
+        });
+        it('# Returns true for all phrases defined in HttpSuccessReasonPhrases', function () {
+            Object.values(HttpSuccessReasonPhrases).forEach((phrase) => {
+                expect(isSuccessStatus(phrase)).to.be.true;
+            });
+            expect(isSuccessStatus('OK')).to.be.true;
+        });
+        it('# Returns false for all phrases not defined in HttpSuccessReasonPhrases', function () {
+            Object.entries(HttpReasonPhrases).forEach((phrase) => {
+                if (
+                    !(
+                        HttpSuccessReasonPhrases as {
+                            [key: string]: string;
+                        }
+                    )[phrase[0]]
+                ) {
+                    expect(isSuccessStatus(phrase[1])).to.be.false;
+                }
+            });
+            expect(isSuccessStatus('Bad Request')).to.be.false;
+        });
+    });
+
+    describe('is2xxSuccessStatusCode', function () {
+        it('# Returns true for any integer in range [200 - 299]', function () {
+            for (let code = 200; code <= 299; code += 1) {
+                expect(is2xxSuccessStatusCode(code)).to.be.true;
+            }
+        });
+        it('# Returns false for any integer outside of range [200 - 299]', function () {
+            for (let code = 0; code <= 1000; code += 1) {
+                if (code < 200 || code > 299) {
+                    expect(is2xxSuccessStatusCode(code)).to.be.false;
+                }
+            }
         });
     });
 });

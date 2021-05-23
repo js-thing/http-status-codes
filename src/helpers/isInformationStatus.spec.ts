@@ -7,103 +7,113 @@ import {
 } from './isInformationStatus';
 import {
     HttpInformationStatusCodes,
-    HttpServerErrorStatusCodes,
+    HttpStatusCodes,
 } from '../HttpStatusCodes';
 import {
     HttpInformationReasonPhrases,
-    HttpServerErrorReasonPhrases,
+    HttpReasonPhrases,
 } from '../HttpReasonPhrases';
 
-describe('helper functions', function () {
-    describe('# isInformationStatusCode(statusCode)', function () {
-        it('should return `true` if the argument is defined in HttpInformationStatusCodes', function () {
-            expect(isInformationStatusCode(HttpInformationStatusCodes.Continue))
-                .to.be.true;
+describe('isInformationStatus', function () {
+    describe('isInformationStatusCode', function () {
+        it('# Returns true for all codes defined in HttpInformationStatusCodes', function () {
+            Object.values(HttpInformationStatusCodes).forEach((code) => {
+                if (typeof code === 'number') {
+                    expect(isInformationStatusCode(code)).to.be.true;
+                }
+            });
+            expect(isInformationStatusCode(100)).to.be.true;
         });
-        it('should return `true` if the argument is a valid defined code between [100 - 199]', function () {
-            expect(isInformationStatusCode(101)).to.be.true;
-        });
-        it('should return `false` if the argument is not defined in HttpInformationStatusCodes', function () {
-            expect(
-                isInformationStatusCode(
-                    HttpServerErrorStatusCodes.InternalServerError
-                )
-            ).to.be.false;
-        });
-        it('should return `false` if the argument is not a valid defined code between [100 - 199]', function () {
-            expect(isInformationStatusCode(404)).to.be.false;
-        });
-    });
-
-    describe('# isInformationReasonPhrase(statusPhrase)', function () {
-        it('should return `true` if the argument is defined in HttpInformationReasonPhrases', function () {
-            expect(
-                isInformationReasonPhrase(HttpInformationReasonPhrases.Continue)
-            ).to.be.true;
-        });
-        it('should return `true` if the argument is a valid reason phrase string', function () {
-            expect(isInformationReasonPhrase('Early Hints')).to.be.true;
-        });
-        it('should return `false` if the argument is not defined in HttpInformationReasonPhrases', function () {
-            expect(
-                isInformationReasonPhrase(
-                    HttpServerErrorReasonPhrases.InternalServerError
-                )
-            ).to.be.false;
-        });
-        it('should return `false` if the argument is not a valid reason phrase string', function () {
-            expect(isInformationReasonPhrase('Internal Server Error')).to.be
-                .false;
+        it('# Returns false for all codes not defined in HttpInformationStatusCodes', function () {
+            Object.values(HttpStatusCodes).forEach((code) => {
+                if (
+                    typeof code === 'number' &&
+                    !(code in HttpInformationStatusCodes)
+                ) {
+                    expect(isInformationStatusCode(code)).to.be.false;
+                }
+            });
+            expect(isInformationStatusCode(2344575)).to.be.false;
         });
     });
 
-    describe('# isInformationStatus(status)', function () {
-        it('should return `true` if the argument is defined in HttpInformationStatusCodes', function () {
-            expect(isInformationStatus(HttpInformationStatusCodes.Continue)).to
-                .be.true;
+    describe('isInformationReasonPhrase', function () {
+        it('# Returns true for all phrases defined in HttpInformationReasonPhrases', function () {
+            Object.values(HttpInformationReasonPhrases).forEach((phrase) => {
+                expect(isInformationReasonPhrase(phrase)).to.be.true;
+            });
+            expect(isInformationReasonPhrase('Continue')).to.be.true;
         });
-        it('should return `true` if the argument is a valid defined code between [100 - 199]', function () {
-            expect(isInformationStatus(101)).to.be.true;
-        });
-        it('should return `false` if the argument is not defined in HttpInformationStatusCodes', function () {
-            expect(
-                isInformationStatus(
-                    HttpServerErrorStatusCodes.InternalServerError
-                )
-            ).to.be.false;
-        });
-        it('should return `false` if the argument is not a valid defined code between [100 - 199]', function () {
-            expect(isInformationStatus(404)).to.be.false;
-        });
-
-        it('should return `true` if the argument is defined in HttpInformationReasonPhrases', function () {
-            expect(isInformationStatus(HttpInformationReasonPhrases.Continue))
-                .to.be.true;
-        });
-        it('should return `true` if the argument is a valid reason phrase string', function () {
-            expect(isInformationStatus('Early Hints')).to.be.true;
-        });
-        it('should return `false` if the argument is not defined in HttpInformationReasonPhrases', function () {
-            expect(
-                isInformationStatus(
-                    HttpServerErrorReasonPhrases.InternalServerError
-                )
-            ).to.be.false;
-        });
-        it('should return `false` if the argument is not a valid reason phrase string', function () {
-            expect(isInformationStatus('Internal Server Error')).to.be.false;
+        it('# Returns false for all phrases not defined in HttpInformationReasonPhrases', function () {
+            Object.entries(HttpReasonPhrases).forEach((phrase) => {
+                if (
+                    !(
+                        HttpInformationReasonPhrases as {
+                            [key: string]: string;
+                        }
+                    )[phrase[0]]
+                ) {
+                    expect(isInformationReasonPhrase(phrase[1])).to.be.false;
+                }
+            });
+            expect(isInformationReasonPhrase('Ok')).to.be.false;
         });
     });
 
-    describe('# is1xxInformationStatusCode(statusCode)', function () {
-        it('should return true for any integer between 100 to 199', function () {
-            expect(is1xxInformationStatusCode(100)).to.be.true;
-            expect(is1xxInformationStatusCode(150)).to.be.true;
-            expect(is1xxInformationStatusCode(199)).to.be.true;
+    describe('isInformationStatus', function () {
+        it('# Returns true for all codes defined in HttpInformationStatusCodes', function () {
+            Object.values(HttpInformationStatusCodes).forEach((code) => {
+                if (typeof code === 'number') {
+                    expect(isInformationStatus(code)).to.be.true;
+                }
+            });
+            expect(isInformationStatus(100)).to.be.true;
         });
-        it('should return false for any integer outside of 100 to 199', function () {
-            expect(is1xxInformationStatusCode(200)).to.be.false;
-            expect(is1xxInformationStatusCode(500)).to.be.false;
+        it('# Returns false for all codes not defined in HttpInformationStatusCodes', function () {
+            Object.values(HttpStatusCodes).forEach((code) => {
+                if (
+                    typeof code === 'number' &&
+                    !(code in HttpInformationStatusCodes)
+                ) {
+                    expect(isInformationStatus(code)).to.be.false;
+                }
+            });
+            expect(isInformationStatus(2344575)).to.be.false;
+        });
+        it('# Returns true for all phrases defined in HttpInformationReasonPhrases', function () {
+            Object.values(HttpInformationReasonPhrases).forEach((phrase) => {
+                expect(isInformationStatus(phrase)).to.be.true;
+            });
+            expect(isInformationStatus('Continue')).to.be.true;
+        });
+        it('# Returns false for all phrases not defined in HttpInformationReasonPhrases', function () {
+            Object.entries(HttpReasonPhrases).forEach((phrase) => {
+                if (
+                    !(
+                        HttpInformationReasonPhrases as {
+                            [key: string]: string;
+                        }
+                    )[phrase[0]]
+                ) {
+                    expect(isInformationStatus(phrase[1])).to.be.false;
+                }
+            });
+            expect(isInformationStatus('Ok')).to.be.false;
+        });
+    });
+
+    describe('is1xxInformationStatusCode', function () {
+        it('# Returns true for any integer in range [100 - 199]', function () {
+            for (let code = 100; code <= 199; code += 1) {
+                expect(is1xxInformationStatusCode(code)).to.be.true;
+            }
+        });
+        it('# Returns false for any integer outside of range [100 - 199]', function () {
+            for (let code = 0; code <= 1000; code += 1) {
+                if (code < 100 || code > 199) {
+                    expect(is1xxInformationStatusCode(code)).to.be.false;
+                }
+            }
         });
     });
 });

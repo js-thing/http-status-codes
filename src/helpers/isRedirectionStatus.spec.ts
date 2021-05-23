@@ -7,112 +7,113 @@ import {
 } from './isRedirectionStatus';
 import {
     HttpRedirectionStatusCodes,
-    HttpServerErrorStatusCodes,
+    HttpStatusCodes,
 } from '../HttpStatusCodes';
 import {
+    HttpReasonPhrases,
     HttpRedirectionReasonPhrases,
-    HttpServerErrorReasonPhrases,
 } from '../HttpReasonPhrases';
 
-describe('redirection helper functions', function () {
-    describe('# isRedirectionStatusCode(statusCode)', function () {
-        it('should return `true` if the argument is defined in HttpRedirectionStatusCodes', function () {
-            expect(
-                isRedirectionStatusCode(
-                    HttpRedirectionStatusCodes.MovedPermanently
-                )
-            ).to.be.true;
-        });
-        it('should return `true` if the argument is a valid defined code between [300 - 399]', function () {
+describe('isRedirectionStatus', function () {
+    describe('isRedirectionStatusCode', function () {
+        it('# Returns true for all codes defined in HttpRedirectionStatusCodes', function () {
+            Object.values(HttpRedirectionStatusCodes).forEach((code) => {
+                if (typeof code === 'number') {
+                    expect(isRedirectionStatusCode(code)).to.be.true;
+                }
+            });
             expect(isRedirectionStatusCode(300)).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpRedirectionStatusCodes', function () {
-            expect(
-                isRedirectionStatusCode(
-                    HttpServerErrorStatusCodes.InternalServerError
-                )
-            ).to.be.false;
-        });
-        it('should return `false` if the argument is not a valid defined code between [300 - 399]', function () {
-            expect(isRedirectionStatusCode(404)).to.be.false;
-        });
-    });
-
-    describe('# isRedirectionReasonPhrase(statusPhrase)', function () {
-        it('should return `true` if the argument is defined in HttpRedirectionReasonPhrases', function () {
-            expect(
-                isRedirectionReasonPhrase(
-                    HttpRedirectionReasonPhrases.PermanentRedirect
-                )
-            ).to.be.true;
-        });
-        it('should return `true` if the argument is a valid reason phrase string', function () {
-            expect(isRedirectionReasonPhrase('Moved Permanently')).to.be.true;
-        });
-        it('should return `false` if the argument is not defined in HttpRedirectionReasonPhrases', function () {
-            expect(
-                isRedirectionReasonPhrase(
-                    HttpServerErrorReasonPhrases.InternalServerError
-                )
-            ).to.be.false;
-        });
-        it('should return `false` if the argument is not a valid reason phrase string', function () {
-            expect(isRedirectionReasonPhrase('Internal Server Error')).to.be
-                .false;
+        it('# Returns false for all codes not defined in HttpRedirectionStatusCodes', function () {
+            Object.values(HttpStatusCodes).forEach((code) => {
+                if (
+                    typeof code === 'number' &&
+                    !(code in HttpRedirectionStatusCodes)
+                ) {
+                    expect(isRedirectionStatusCode(code)).to.be.false;
+                }
+            });
+            expect(isRedirectionStatusCode(2344575)).to.be.false;
         });
     });
 
-    describe('# isRedirectionStatus(status)', function () {
-        it('should return `true` if the argument is defined in HttpRedirectionStatusCodes', function () {
-            expect(
-                isRedirectionStatus(HttpRedirectionStatusCodes.MovedPermanently)
-            ).to.be.true;
+    describe('isRedirectionReasonPhrase', function () {
+        it('# Returns true for all phrases defined in HttpRedirectionReasonPhrases', function () {
+            Object.values(HttpRedirectionReasonPhrases).forEach((phrase) => {
+                expect(isRedirectionReasonPhrase(phrase)).to.be.true;
+            });
+            expect(isRedirectionReasonPhrase('Found')).to.be.true;
         });
-        it('should return `true` if the argument is a valid defined code between [300 - 399]', function () {
+        it('# Returns false for all phrases not defined in HttpRedirectionReasonPhrases', function () {
+            Object.entries(HttpReasonPhrases).forEach((phrase) => {
+                if (
+                    !(
+                        HttpRedirectionReasonPhrases as {
+                            [key: string]: string;
+                        }
+                    )[phrase[0]]
+                ) {
+                    expect(isRedirectionReasonPhrase(phrase[1])).to.be.false;
+                }
+            });
+            expect(isRedirectionReasonPhrase('Ok')).to.be.false;
+        });
+    });
+
+    describe('isRedirectionStatus', function () {
+        it('# Returns true for all codes defined in HttpRedirectionStatusCodes', function () {
+            Object.values(HttpRedirectionStatusCodes).forEach((code) => {
+                if (typeof code === 'number') {
+                    expect(isRedirectionStatus(code)).to.be.true;
+                }
+            });
             expect(isRedirectionStatus(300)).to.be.true;
         });
-        it('should return `false` if the argument is not defined in HttpRedirectionStatusCodes', function () {
-            expect(
-                isRedirectionStatus(
-                    HttpServerErrorStatusCodes.InternalServerError
-                )
-            ).to.be.false;
+        it('# Returns false for all codes not defined in HttpRedirectionStatusCodes', function () {
+            Object.values(HttpStatusCodes).forEach((code) => {
+                if (
+                    typeof code === 'number' &&
+                    !(code in HttpRedirectionStatusCodes)
+                ) {
+                    expect(isRedirectionStatus(code)).to.be.false;
+                }
+            });
+            expect(isRedirectionStatus(2344575)).to.be.false;
         });
-        it('should return `false` if the argument is not a valid defined code between [300 - 399]', function () {
-            expect(isRedirectionStatus(404)).to.be.false;
+        it('# Returns true for all phrases defined in HttpRedirectionReasonPhrases', function () {
+            Object.values(HttpRedirectionReasonPhrases).forEach((phrase) => {
+                expect(isRedirectionStatus(phrase)).to.be.true;
+            });
+            expect(isRedirectionStatus('Found')).to.be.true;
         });
-
-        it('should return `true` if the argument is defined in HttpRedirectionReasonPhrases', function () {
-            expect(
-                isRedirectionStatus(
-                    HttpRedirectionReasonPhrases.PermanentRedirect
-                )
-            ).to.be.true;
-        });
-        it('should return `true` if the argument is a valid reason phrase string', function () {
-            expect(isRedirectionStatus('Moved Permanently')).to.be.true;
-        });
-        it('should return `false` if the argument is not defined in HttpRedirectionReasonPhrases', function () {
-            expect(
-                isRedirectionStatus(
-                    HttpServerErrorReasonPhrases.InternalServerError
-                )
-            ).to.be.false;
-        });
-        it('should return `false` if the argument is not a valid reason phrase string', function () {
-            expect(isRedirectionStatus('Internal Server Error')).to.be.false;
+        it('# Returns false for all phrases not defined in HttpRedirectionReasonPhrases', function () {
+            Object.entries(HttpReasonPhrases).forEach((phrase) => {
+                if (
+                    !(
+                        HttpRedirectionReasonPhrases as {
+                            [key: string]: string;
+                        }
+                    )[phrase[0]]
+                ) {
+                    expect(isRedirectionStatus(phrase[1])).to.be.false;
+                }
+            });
+            expect(isRedirectionStatus('Ok')).to.be.false;
         });
     });
 
-    describe('# is3xxRedirectionStatusCode(statusCode)', function () {
-        it('should return true for any integer between 300 to 399', function () {
-            expect(is3xxRedirectionStatusCode(300)).to.be.true;
-            expect(is3xxRedirectionStatusCode(350)).to.be.true;
-            expect(is3xxRedirectionStatusCode(399)).to.be.true;
+    describe('is3xxRedirectionStatusCode', function () {
+        it('# Returns true for any integer in range [300 - 399]', function () {
+            for (let code = 300; code <= 399; code += 1) {
+                expect(is3xxRedirectionStatusCode(code)).to.be.true;
+            }
         });
-        it('should return false for any integer outside of 300 to 399', function () {
-            expect(is3xxRedirectionStatusCode(100)).to.be.false;
-            expect(is3xxRedirectionStatusCode(500)).to.be.false;
+        it('# Returns false for any integer outside of range [300 - 399]', function () {
+            for (let code = 0; code <= 1000; code += 1) {
+                if (code < 300 || code > 399) {
+                    expect(is3xxRedirectionStatusCode(code)).to.be.false;
+                }
+            }
         });
     });
 });
