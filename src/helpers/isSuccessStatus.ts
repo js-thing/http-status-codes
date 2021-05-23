@@ -26,7 +26,7 @@ export const is2xxSuccessStatusCode = (statusCode: number): boolean =>
  *
  * The match is case sensitive
  *
- * @param reasonPhrase - The reason phrase. e.g. 'Ok'
+ * @param reasonPhrase - The reason phrase. e.g. 'OK'
  * @returns `true` if matches `false` otherwise
  */
 export const isSuccessReasonPhrase = (reasonPhrase: string): boolean =>

@@ -12,8 +12,8 @@ enum HttpInformationReasonPhrases {
      * client should continue the request, or ignore the response if the request
      * is already finished.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/100)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/100) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.2.1)
      * @type {string}
      */
     Continue = 'Continue',
@@ -26,8 +26,8 @@ enum HttpInformationReasonPhrases {
      * request header from the client,
      * and indicates the protocol the server is switching to.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/101)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/101) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.2.2)
      * @type {string}
      */
     SwitchingProtocol = 'Switching Protocol',
@@ -38,8 +38,8 @@ enum HttpInformationReasonPhrases {
      * This code indicates that the server has received and is processing the request,
      * but no response is available yet.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/102)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/102) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc2518#section-10.1)
      * @type {string}
      */
     Processing = 'Processing',
@@ -53,8 +53,8 @@ enum HttpInformationReasonPhrases {
      * [preloading](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
      * resources while the server prepares a response.
      *
-     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/103)
-     *
+     * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/103) |
+     * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc8297#section-2)
      * @type {string}
      */
     EarlyHints = 'Early Hints',

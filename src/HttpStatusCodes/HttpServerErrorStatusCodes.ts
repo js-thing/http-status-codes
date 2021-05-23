@@ -23,7 +23,7 @@ enum HttpServerErrorStatusCodes {
      *
      * The request method is not supported by the server and cannot be handled.
      * The only methods that servers are required to support
-     * (and therefore that must not return this code) are ```GET``` and ```HEAD```.
+     * (and therefore that must not return this code) are `GET` and `HEAD`.
      *
      * [Read more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501) |
      * [Official Documentation](https://datatracker.ietf.org/doc/html/rfc7231#section-6.6.2)
@@ -50,7 +50,7 @@ enum HttpServerErrorStatusCodes {
      * The server is not ready to handle the request. Common causes are a server
      * that is down for maintenance or that is overloaded. Note that together
      * with this response, a user-friendly page explaining the problem should be sent.
-     * This responses should be used for temporary conditions and the ```Retry-After:```
+     * This responses should be used for temporary conditions and the `Retry-After:`
      * HTTP header should, if possible, contain the estimated time before the recovery
      * of the service. The webmaster must also take care about the
      * caching-related headers that are sent along with this response,
