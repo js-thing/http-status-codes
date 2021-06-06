@@ -47,18 +47,19 @@ npm install @js-thing/http-status-codes
 
 ### Import it to your project
 
-Import the library to your project
+Use ES module import
 ```javascript
-import HttpStatusCodes, { 
+import { 
     HttpInformationStatusCodes, 
     HttpSuccessStatusCodes,
     HttpRedirectionStatusCodes,
     HttpClientErrorStatusCodes,     
     HttpServerErrorStatusCodes,
+    HttpStatusCodes,
 } from '@js-thing/http-status-codes';
 ```
 
-Or
+Or CommonJS Require
 ```javascript
 const { 
     HttpInformationStatusCodes, 
@@ -69,16 +70,11 @@ const {
     HttpStatusCodes,
 } = require('@js-thing/http-status-codes');
 ```
-
-Import default using require
-```javascript
-const HttpStatusCodes = require('@js-thing/http-status-codes').default;
-```
 ---
 
 ### Usage
 
-The `HttpStatusCodes` enum is the super set of `HttpInformationStatusCodes`, `HttpSuccessStatusCodes`, `HttpRedirectionStatusCodes`, `HttpClientErrorStatusCodes` and `HttpServerErrorStatusCodes` enums,
+The `HttpStatusCodes` enum is the  status code super set of `HttpInformationStatusCodes`, `HttpSuccessStatusCodes`, `HttpRedirectionStatusCodes`, `HttpClientErrorStatusCodes` and `HttpServerErrorStatusCodes` enums
 
 ```javascript
 // use the combined enum to access any status code
@@ -95,6 +91,99 @@ const code = HttpRedirectionStatusCodes.Found; // code = 302
 const code = HttpClientErrorStatusCodes.BadRequest; // code = 400
 const code = HttpServerErrorStatusCodes.InternalServerError; // code = 500
 ```
+
+Similarly for reason phrase
+
+```javascript
+const {
+    HttpInformationReasonPhrases,
+    HttpSuccessReasonPhrases,
+    HttpRedirectionReasonPhrases,
+    HttpClientErrorReasonPhrases,
+    HttpServerErrorReasonPhrases,
+    HttpReasonPhrases
+  } = require("@js-thing/http-status-codes");
+
+// use the combined enum to access any reason rhrase
+const phrase = HttpReasonPhrases.Continue; // phrase = "Continue"
+const phrase = HttpReasonPhrases.Ok; // phrase = "OK"
+const phrase = HttpReasonPhrases.Found; // phrase = "Found"
+const phrase = HttpReasonPhrases.BadRequest; // phrase = "Bad Request"
+const phrase = HttpReasonPhrases.InternalServerError; // phrase = "Internal Server Error"
+
+// Or use the individual enum group
+const phrase = HttpInformationReasonPhrases.Continue; // phrase = "Continue"
+const phrase = HttpSuccessReasonPhrases.Ok; // phrase = "OK"
+const phrase = HttpRedirectionReasonPhrases.Found; // phrase = "Found"
+const phrase = HttpClientErrorReasonPhrases.BadRequest; // phrase = "Bad Request"
+const phrase = HttpServerErrorReasonPhrases.InternalServerError; // phrase = "Internal Server Error"
+```
+
+Check status code, reason phrase defined in RFC
+
+```javascript
+const {
+  isSuccessStatusCode,
+  isSuccessReasonPhrase,
+  isSuccessStatus,
+} = require("@js-thing/http-status-codes");
+
+isSuccessStatusCode(200); // returns true
+isSuccessStatusCode(250); // returns false as 250 is not defined in RFC
+isSuccessReasonPhrase("OK"); // returns true
+isSuccessReasonPhrase("ABC"); // returns false
+// isSuccessStatus accepts both number or string and can check code or phrase
+isSuccessStatus(200); // returns true
+isSuccessStatus("OK"); // returns true
+
+// similarly these methods are available for other status family as well
+```
+
+Check status code family
+
+```javascript
+const {
+  is1xxInformationStatusCode,
+  is2xxSuccessStatusCode,
+  is3xxRedirectionStatusCode,
+  is4xxClientErrorStatusCode,
+  is5xxServerErrorStatusCode,
+} = require("@js-thing/http-status-codes");
+
+is1xxInformationStatusCode(code); // returns true for code >= 100 && code <=199
+is2xxSuccessStatusCode(code); // returns true for code >= 200 && code <=299
+is3xxRedirectionStatusCode(code); // returns true for code >= 300 && code <=399
+is4xxClientErrorStatusCode(code); // returns true for code >= 400 && code <=499
+is5xxServerErrorStatusCode(code); // returns true for code >= 500 && code <=599
+```
+
+Get status code, reason phrase and complete status code with phrase
+
+```javascript
+const {
+  getStatusCode,
+  getReasonPhrase,
+  getCompositeStatus,
+} = require("@js-thing/http-status-codes");
+
+getStatusCode("OK"); // returns 200
+//or pass an optional parameter to ignore the case of the status phrase
+getStatusCode("ok", true); // returns 200
+getStatusCode("abc"); // returns undefined
+
+getReasonPhrase(200); // returns "OK"
+getCompositeStatus(200); // returns "200 OK"
+```
+
+---
+
+### Contributors
+
+Jnyan Ankur Kakati  
+Abhishek Chaterjee  
+Ankita Agarwal  
+[Nabadeep Kakati](mailto:kakati.nabadeep@gmail.com) - Logo
+
 ---
 
 ### Licence
